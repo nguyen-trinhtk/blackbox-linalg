@@ -1,14 +1,15 @@
 from sage.all import *
 from sage.matrix.berlekamp_massey import berlekamp_massey
 
-def min_poly_bm(sequence):
-    R = PolynomialRing(AA,"x")
+def min_poly_BM(field, sequence):
+    R = PolynomialRing(field,"x")
     n = len(sequence)
-    C = [AA(1)]
-    B = [AA(1)]
-    L = ZZ(0)
-    m = ZZ(1)
-    b = AA(1)
+    C = [field(1)]
+    B = [field(1)]
+    L = 0
+    m = 1
+    b = field(1)
+    sequence = [field(s) for s in sequence]
     for k in range(n):
         d = sequence[k]
         for i in range(1, L+1):
@@ -30,6 +31,3 @@ def min_poly_bm(sequence):
                 C[i + m] -= d/b * B[i]
             m += 1
     return R(C[::-1])
-
-print(berlekamp_massey([1, 7, 9, 2, 5, 1]))
-print(min_poly_bm([1, 7, 9, 2, 5, 1]))
