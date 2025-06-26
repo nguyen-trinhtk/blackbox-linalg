@@ -1,8 +1,7 @@
 ### 1. Main Algorithm
 $$Ax = b$$
 - **$A$ is nonsingular, square $\to x = A^{-1}b$**
-- **Steps:**
-- Ideas: 
+- **Ideas:** 
 	- From min poly of $A^ib$, can compute $A^{-1}$
 	-  $\{A^ib\}$ is a sequence in $\mathbb{F}^n \to$ try to convert to a linearly recurrent sequence in $\mathbb{F}$
 	- Given random vector $u \in \mathbb{F}^n$, sequences $\{A^ib\}_{i=0}^{\infty}$ ($\in \mathbb{F}^n$) and $\{u^TA^ib\}_{i=0}^{\infty}$ ($\in \mathbb{F}$) have the same min poly with high probability (if $\mathbb{F}$ has enough elements) 
