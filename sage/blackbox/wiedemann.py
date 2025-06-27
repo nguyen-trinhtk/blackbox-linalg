@@ -1,15 +1,14 @@
 from sage.all import *
-from sage.matrix.berlekamp_massey import berlekamp_massey
+# from sage.matrix.berlekamp_massey import berlekamp_massey
 from krylov import krylov
 from berlekamp_massey import min_poly_BM
-
 
 def wiedemann(A, b, field):
     n = A.nrows()
     sol = None
     R = PolynomialRing(field, 'x')
     x = R.gen()
-    while not sol: 
+    while not sol:
         u = vector(field, [field.random_element() for _ in range(n)])
         krylov_sequence = krylov(A, b, 2 * n, u)
         m = min_poly_BM(field, krylov_sequence)
