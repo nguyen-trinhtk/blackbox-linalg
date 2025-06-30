@@ -22,7 +22,7 @@ def main():
 if __name__ == '__main__':
     i = 0
     failed = 0
-    while failed == 0 and i < 30:
+    while failed == 0:
         i += 1
         try:
             print(f'Case {i}...', end=' ')
