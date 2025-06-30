@@ -1,10 +1,9 @@
 from sage.all import *
 
-def krylov(A, b, n, u = None):
-    krylov_seq= []
-    for i in range(n):
-        if u:
-            krylov_seq.append(u.dot_product((A ** i) * b))
-        else: 
-            krylov_seq.append((A ** i) * b)
+def krylov(black_box, b, order, u):
+    krylov_seq = []
+    v = b
+    for _ in range(order):
+        krylov_seq.append(u.dot_product(v))
+        v = black_box.prod(v)
     return krylov_seq

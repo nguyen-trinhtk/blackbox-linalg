@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "linear-algebra/4. Special Matrices.md",
+                "file": "linear-algebra/2. Matrix.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "4. Special Matrices"
+              "title": "2. Matrix"
             }
           },
           {
@@ -198,27 +198,26 @@
   },
   "active": "07d232bf0964200e",
   "lastOpenFiles": [
+    "linear-algebra/1. Vector.md",
+    "linear-algebra/3. Linear Systems.md",
+    "linear-algebra/2. Matrix.md",
+    "wiedemanns-algorithm/Wiedemann's Algorithm (nonsingular square case).md",
+    "sage/blackbox/debug_constant.py",
+    "sage/blackbox/debug_problematic.py",
+    "sage/blackbox/debug_wiedemann.py",
+    "sage/blackbox/debug_diagonal.py",
+    "sage/blackbox/simple_test.py",
+    "sage/blackbox/debug_krylov.py",
+    "sage/blackbox/debug_bm.py",
+    "linear-algebra/4. Special Matrices.md",
     "linbox/cpp_tutorial/main.cpp",
     "linbox/cpp_tutorial",
     "linear-algebra/6. Groups and Fields.md",
     "linear-algebra/7. Linearly Recurrent Sequences.md",
     "linear-algebra/5. Spectral Properties of Matrices.md",
-    "linear-algebra/4. Special Matrices.md",
-    "linear-algebra/3. Linear Systems.md",
     "sage/main.py",
-    "sage/berlekamp_massey.py",
-    "sage/krylov.py",
-    "wiedemanns-algorithm/Wiedemann's Algorithm (nonsingular square case).md",
     "README.md",
-    "sage/berlekamp-massey.py",
-    "sage/wiedemann.py",
-    "venv/lib/python3.13/site-packages/sagemath-1.3.0.dist-info/licenses/LICENSE",
-    "venv/lib/python3.13/site-packages/sagemath-1.3.0.dist-info/top_level.txt",
-    "venv/lib/python3.13/site-packages/sagemath-1.3.0.dist-info/licenses",
-    "venv/lib/python3.13/site-packages/sagemath-1.3.0.dist-info/METADATA",
     "wiedemanns-algorithm/Berlekamp - Massey Algorithm.md",
-    "linear-algebra/2. Matrix.md",
-    "Berlekamp-Massey Algorithm.md",
-    "linear-algebra/1. Vector.md"
+    "Berlekamp-Massey Algorithm.md"
   ]
 }
