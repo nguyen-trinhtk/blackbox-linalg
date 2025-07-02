@@ -1,4 +1,4 @@
-### 1. Main Algorithm
+### 1. Nonsingular Square Case
 $$Ax = b$$
 - **$A$ is nonsingular, square $\to x = A^{-1}b$**
 - **Ideas:** 
@@ -8,11 +8,11 @@ $$Ax = b$$
 	$\to$ check if generated min poly of $\{u^TA^ib\}$ is also min poly of $\{A^ib\}$
 - **Algorithm:** 
 	1. **Choose a random vector** $u \in \mathbb{F}_q^n$  
-	2. **Generate:** $\{s_i\} = \{u^T \cdot A^i b\}$ for $i = 0, \dots, 2n - 1$  
+	2. **Generate & project Krylov:** $\{s_i\} = \{u^T \cdot A^i b\}$ for $i = 0, \dots, 2n - 1$  
 	$\to$ linearly recursive
 	3. **Find min poly:** Run Berlekamp-Massey on $\{s_i\}$: $m(z) = z^d + m_{d-1}z^{d-1} + \dots + m_1z + m_0$
 	4. **Let** $h(z) = - \dfrac{m(z) - m_0}{m_0 z}$  
-	- **Compute** $x = h(A) \cdot b \quad (= A^{-1} \cdot b)$ using **Horner’s rule**. If error, repeat. ($m(A)$ is possibly an annihilating poly of $A$, therefore $h(A)$ possibly accounts for $A^{-1}$)
+	- **Compute** $x = h(A) \cdot b \quad (= A^{-1} \cdot b)$ using **Horner’s rule**. If error, repeat. ($m(A)$ is  an annihilating poly of $A$ w. high prob. $\to$ $h(A)$ possibly accounts for $A^{-1}$)
 ### 2. Computing Determinants
 - Let $m_A$ be min poly generated from Wiedemann's alg, $c_A$ for char poly
 - By definition: $c_A(x) = det(xI - A) \to \det(A) = (-1)^n c_A(0)$ (normalizing leading coef to $1$)

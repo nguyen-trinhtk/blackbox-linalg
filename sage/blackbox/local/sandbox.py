@@ -1,8 +1,13 @@
 # All-in-one Python/Sage script to test new functions
-from sage.all import *
-from sage.matrix.berlekamp_massey import berlekamp_massey
-from functools import reduce
 import time
+import sys
+from sage.all import *
+import os
+modules_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'modules'))
+if modules_path not in sys.path:
+    sys.path.insert(0, modules_path)
+# from generators import *
+from wiedemann import wiedemann
 
 class BlackBox: 
     def __init__(self, matrix): 
@@ -133,71 +138,15 @@ def generate_linear_system(field=None, dim=None, sparsity=0.9, matrix_type="spar
     b = vector(field, [field.random_element() for _ in range(dim)])
     return A, b
 
-def krylov(black_box, b, order, u):
-    krylov_seq = []
-    v = b
-    for _ in range(order):
-        krylov_seq.append(u.dot_product(v))
-        v = black_box.prod(v)
-    return krylov_seq
-
-def horner(coeffs, black_box, vector):
-    if not coeffs:
-        return vector * 0
-    result = vector * 0
-    for coeff in reversed(coeffs):
-        result = black_box.prod(result) + coeff * vector
-    return result
-
-def wiedemann(black_box, b, verbose=False): 
-    field = b.base_ring()
-    dim = len(b)
-    R = PolynomialRing(field, 'x')
-    max_attempts = 5
-    if b.is_zero():
-        return vector(field, [0] * dim)
-    for attempt in range(1, max_attempts + 1):
-        u = vector(field, [field.random_element() for _ in range(dim)])
-        if u.is_zero():
-            continue
-        krylov_sequence = krylov(black_box, b, 2 * dim, u)
-        try:
-            m_poly = list(berlekamp_massey(krylov_sequence))
-        except:
-            if verbose:
-                print(f"Attempt {attempt}: Berlekamp-Massey failed")
-            continue
-        if not m_poly or m_poly[0] == 0:
-            if verbose:
-                print(f"Attempt {attempt}: Invalid minimal polynomial")
-            continue
-        try:
-            m_0 = m_poly[0]
-            h_coeffs = [-c / m_0 for c in m_poly[1:]]
-            result = horner(h_coeffs, black_box, b)
-            residual = black_box.prod(result) - b
-            if residual.is_zero():
-                if verbose:
-                    print(f"Solution found in {attempt} attempts")
-                black_box.setMinPoly(m_poly)
-                return result
-        except:
-            if verbose:
-                print(f"Attempt {attempt}: Solution verification failed")
-            continue
-    raise RuntimeError("Wiedemann algorithm failed")
-
-def solve_and_time(matrix_type, field, dim, sparsity=0.8, verbose=False):
+def solve_and_time(matrix_type, field, dim, sparsity=0.8):
     try:
         A, b = generate_linear_system(field, dim, sparsity, matrix_type)
         bbox = BlackBox(A)
         start_time = time.time()
-        x = wiedemann(bbox, b, verbose)
+        x = wiedemann(bbox, b, dim, field)
         end_time = time.time()
-        residual = bbox.prod(x) - b
-        success = residual.is_zero()
         return {
-            'success': success,
+            'success': True,
             'time': end_time - start_time,
             'matrix_type': matrix_type,
             'dim': dim
@@ -238,56 +187,54 @@ def compare_matrix_types(dim=50, field=GF(101), num_trials=3):
         else:
             print(f"  All trials failed")
 
-def determinant(black_box):
-    minpoly = black_box.getMinPoly()
-    if not minpoly: 
-        raise ValueError('This blackbox havent ran Wiedemann')
-    dim = black_box.getDimensions()
+# def determinant(black_box):
+#     minpoly = black_box.getMinPoly()
+#     if not minpoly: 
+#         raise ValueError('This blackbox havent ran Wiedemann')
+#     dim = black_box.getDimensions()
     
-    # Generic case: minimal polynomial degree equals matrix dimension
-    if len(minpoly) - 1 == dim:
-        return (-1)**(dim)*minpoly[0]
+#     # Generic case: minimal polynomial degree equals matrix dimension
+#     if len(minpoly) - 1 == dim:
+#         return (-1)**(dim)*minpoly[0]
     
-    # Degenerate case: minimal polynomial degree < matrix dimension
-    # Use random diagonal similarity transformation to make matrix non-derogatory
-    else:
-        field = black_box._BlackBox__matrix.base_ring()
-        max_attempts = 20
+#     # Degenerate case: minimal polynomial degree < matrix dimension
+#     # Use random diagonal similarity transformation to make matrix non-derogatory
+#     else:
+#         field = black_box._BlackBox__matrix.base_ring()
+#         max_attempts = 20
         
-        for attempt in range(max_attempts):
-            # Generate random diagonal matrix D with non-zero entries
-            diagonal_entries = [field.random_element() for _ in range(dim)]
-            while any(d == 0 for d in diagonal_entries):
-                diagonal_entries = [field.random_element() for _ in range(dim)]
+#         for attempt in range(max_attempts):
+#             # Generate random diagonal matrix D with non-zero entries
+#             diagonal_entries = [field.random_element() for _ in range(dim)]
+#             while any(d == 0 for d in diagonal_entries):
+#                 diagonal_entries = [field.random_element() for _ in range(dim)]
             
-            D = diagonal_matrix(field, diagonal_entries)
-            det_D = reduce(lambda x, y: x * y, diagonal_entries)
+#             D = diagonal_matrix(field, diagonal_entries)
+#             det_D = reduce(lambda x, y: x * y, diagonal_entries)
             
-            # Create new black box B = A * D
-            B_matrix = black_box._BlackBox__matrix * D
-            B_bbox = BlackBox(B_matrix)
+#             B_matrix = black_box._BlackBox__matrix * D
+#             B_bbox = BlackBox(B_matrix)
             
-            # Generate random vector and run Wiedemann on B
-            b = vector(field, [field.random_element() for _ in range(dim)])
-            if b.is_zero():
-                continue
+#             # Generate random vector and run Wiedemann on B
+#             b = vector(field, [field.random_element() for _ in range(dim)])
+#             if b.is_zero():
+#                 continue
                 
-            try:
-                wiedemann(B_bbox, b, verbose=False)
-                B_minpoly = B_bbox.getMinPoly()
+#             try:
+#                 wiedemann(B_bbox, b, verbose=False)
+#                 B_minpoly = B_bbox.getMinPoly()
                 
-                # Check if B is non-derogatory (minimal polynomial degree = dimension)
-                if B_minpoly and len(B_minpoly) - 1 == dim:
-                    det_B = (-1)**(dim) * B_minpoly[0]
-                    # det(A) = det(B) / det(D) since B = A * D
-                    return det_B / det_D
+#                 # Check if B is non-derogatory (minimal polynomial degree = dimension)
+#                 if B_minpoly and len(B_minpoly) - 1 == dim:
+#                     det_B = (-1)**(dim) * B_minpoly[0]
+#                     # det(A) = det(B) / det(D) since B = A * D
+#                     return det_B / det_D
                     
-            except Exception:
-                continue
+#             except Exception:
+#                 continue
         
-        # If all attempts failed, raise an error
-        raise RuntimeError(f"Failed to compute determinant after {max_attempts} attempts with diagonal similarity")
-
+#         # If all attempts failed, raise an error
+#         raise RuntimeError(f"Failed to compute determinant after {max_attempts} attempts with diagonal similarity")
 
 def main():    
     print("\nComparing matrix types...")

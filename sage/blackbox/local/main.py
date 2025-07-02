@@ -1,6 +1,11 @@
 import time
-from sage.blackbox.local_sage.modules.generators import *
-from sage.blackbox.local_sage.modules.wiedemann import wiedemann
+import sys
+import os
+modules_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'modules'))
+if modules_path not in sys.path:
+    sys.path.insert(0, modules_path)
+from generators import *
+from wiedemann import wiedemann
 
 class BlackBox: 
     def __init__(self, matrix): 
@@ -10,13 +15,13 @@ class BlackBox:
     def get_matrix(self):
         return self.__matrix
 
-def main():
+def main():    
     A, b, dim, field = generate_linear_system()
     bbox_A = BlackBox(A)
     start = time.time()
-    x = wiedemann(bbox_A, b, dim, field)
+    x, attempts = wiedemann(bbox_A, b, dim, field)
     end = time.time()
-    print(f"Finished Wiedemann in {end - start:.3f}s")
+    print(f"Finished Wiedemann in {end - start:.3f}s ({attempts} attempts)")
     return True
 
 if __name__ == '__main__':
