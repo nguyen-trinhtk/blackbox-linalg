@@ -16,10 +16,12 @@ $$Ax = b$$
 ### 2. Computing Determinants
 - Let $m_A$ be min poly generated from Wiedemann's alg, $c_A$ for char poly
 - By definition: $c_A(x) = det(xI - A) \to \det(A) = (-1)^n c_A(0)$ (normalizing leading coef to $1$)
-- If $A$ is non-derogatory: $c_A = m_A \to$ can compute $det(A)$
+- If $A$ is non-derogatory (no repeated $\lambda$): $c_A = m_A \to$ can compute $det(A)$
 - If $A$ is derogatory ($c_A \neq m_A$): 
 	- Let 
 		$D = diag(y_1,..., y_n)$ (random $y_i$) 
 		$B = A \cdot D$ $\to$ high prob that $B$ is non-derogatory
 	- Then: $det(B) = det(A \cdot D) = det(A) \cdot det(D)$, $det(D) = y_1 \cdot ... \cdot y_n$ 
+	- Basically breaking the symmetries with random entries
 	$\to det(A) = \frac{det(B)}{y_1 \cdot ... \cdot y_n}$ ; $det(B)$ can be computed from its min poly ==(reapply W?)==
+- 

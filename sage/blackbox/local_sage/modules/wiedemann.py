@@ -1,9 +1,9 @@
 from sage.all import *
 from sage.matrix.berlekamp_massey import berlekamp_massey
-from krylov import krylov
-from generators import *
+from sage.blackbox.local_sage.modules.krylov import krylov
+from sage.blackbox.local_sage.modules.generators import *
 from functools import reduce
-from horner import horner
+from sage.blackbox.local_sage.modules.horner import horner
 
 def wiedemann(black_box, b, dim, field): 
     R = PolynomialRing(field, 'x')

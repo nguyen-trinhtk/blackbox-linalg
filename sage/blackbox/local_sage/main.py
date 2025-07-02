@@ -1,6 +1,6 @@
 import time
-from generators import *
-from wiedemann import wiedemann
+from sage.blackbox.local_sage.modules.generators import *
+from sage.blackbox.local_sage.modules.wiedemann import wiedemann
 
 class BlackBox: 
     def __init__(self, matrix): 
