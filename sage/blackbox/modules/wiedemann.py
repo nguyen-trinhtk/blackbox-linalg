@@ -43,9 +43,8 @@ def wiedemann(black_box, b, dim, field):
                 base_poly *= factor**(mult_m - mult_base)
         
         # Check if base_poly has degree equal to matrix dimension
-        if base_poly.degree() == dim:
-            base_poly_coeffs = list(base_poly)
-            try:
+        base_poly_coeffs = list(base_poly)
+        try:
                 h_coeffs = [-c / base_poly_coeffs[0] for c in base_poly_coeffs[1:]] # h(x)
                 result = horner(h_coeffs, black_box, b) # x = h(A)b
                 # Verify solution by checking Ax - b = 0
@@ -54,13 +53,11 @@ def wiedemann(black_box, b, dim, field):
                     return result, attempt
                 else:
                     print(f"Attempt {attempt} failed...")
-            except Exception as e:
+        except Exception as e:
                 print(f"Attempt {attempt} failed: {e}")
-        else:
-            print(f"Attempt {attempt} failed: polynomial degree {base_poly.degree()} != {dim}")
     # Failed after max attempts
     print("Max attempts failed")
     # Print systems' details
-    print(f"Failure: A = {black_box.get_matrix()}")
-    print(f"Failure: b = {b}")
+    # print(f"Failure: A = {black_box.get_matrix()}")
+    # print(f"Failure: b = {b}")
     raise RuntimeError("Wiedemann failed after max attempts")

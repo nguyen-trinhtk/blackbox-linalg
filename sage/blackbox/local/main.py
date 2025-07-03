@@ -13,8 +13,6 @@ class BlackBox:
         self.__matrix = matrix
     def prod(self, vector):
         return self.__matrix * vector
-    # def get_matrix(self):
-    #     return self.__matrix
 
 # Main function
 def main():    
