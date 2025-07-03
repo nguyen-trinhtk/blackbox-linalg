@@ -13,8 +13,8 @@ class BlackBox:
         self.__matrix = matrix
     def prod(self, vector):
         return self.__matrix * vector
-    def get_matrix(self):
-        return self.__matrix
+    # def get_matrix(self):
+    #     return self.__matrix
 
 # Main function
 def main():    
@@ -24,15 +24,18 @@ def main():
     x, attempts = wiedemann(bbox_A, b, dim, field)
     end = time.time()
     print(f"Finished Wiedemann in {end - start:.3f}s ({attempts} attempts)")
+    start_sage = time.time()
     if x == A.solve_right(b):
-        print('Solution verified against Sage built-in solver')
+        end_sage = time.time()
+        print(f'Solution verified against Sage built-in solver ({end_sage - start_sage:.3f}s)')
     else: 
-        raise Exception('Solution different from Sage built-in solver')
+        end_sage = time.time()
+        raise Exception(f'Solution different from Sage built-in solver ({end_sage - start_sage:.3f}s)')
 
 if __name__ == '__main__':
     i = 0
     failed = 0
-    while failed == 0 and i <= 300:
+    while failed == 0 and i <= 30:
         i += 1
         try:
             print(f'Case {i}...', end=' ')

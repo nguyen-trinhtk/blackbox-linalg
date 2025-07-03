@@ -32,29 +32,32 @@ def wiedemann(black_box, b, dim, field):
         # Generate min poly of {u^TA^ib}
         m_poly = berlekamp_massey(krylov_sequence)
 
-        # Append the new factors of m_poly to base_poly
-        # Factorizing both polys
-        factors_base = dict(m_poly.factor())
+        # Update base_poly with factors from m_poly
         factors_m = dict(m_poly.factor())
-        # For each factor - multiplicity in m_poly, check and update in base_poly
-        for factor, mult_m in factors_m.item():
-            mult_base = factors_base.get(factor, 0) # 
+        factors_base = dict(base_poly.factor())
+        
+        # For each factor in m_poly, update base_poly if higher multiplicity
+        for factor, mult_m in factors_m.items():
+            mult_base = factors_base.get(factor, 0)
             if mult_m > mult_base: 
                 base_poly *= factor**(mult_m - mult_base)
-        base_poly_coeffs = list(base_poly)
-        try:
-            h_coeffs = [-c / base_poly_coeffs[0] for c in base_poly_coeffs[1:]] # h(x)
-            result = horner(h_coeffs[::-1], black_box, b) # x = h(A)b
-            # Verifying solution by checking Ax - b = 0
-            if (black_box.prod(result)- b).is_zero(): 
-                print(f"Valid solution: attempt #{attempt}")
-                return result, attempt
-            else:
-                print("Attempt failed, continuing...")
-
-        # Error handling
-        except Exception as e:
-            print(f"Exception: {e}")
+        
+        # Check if base_poly has degree equal to matrix dimension
+        if base_poly.degree() == dim:
+            base_poly_coeffs = list(base_poly)
+            try:
+                h_coeffs = [-c / base_poly_coeffs[0] for c in base_poly_coeffs[1:]] # h(x)
+                result = horner(h_coeffs, black_box, b) # x = h(A)b
+                # Verify solution by checking Ax - b = 0
+                if (black_box.prod(result) - b).is_zero(): 
+                    print(f"Valid solution: attempt #{attempt}")
+                    return result, attempt
+                else:
+                    print(f"Attempt {attempt} failed...")
+            except Exception as e:
+                print(f"Attempt {attempt} failed: {e}")
+        else:
+            print(f"Attempt {attempt} failed: polynomial degree {base_poly.degree()} != {dim}")
     # Failed after max attempts
     print("Max attempts failed")
     # Print systems' details
