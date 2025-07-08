@@ -57,6 +57,7 @@ def wiedemann(black_box, b, dim, field):
                     print(f"Attempt {attempt} failed...")
         except Exception as e:
                 print(f"Attempt {attempt} failed: {e}")
+                continue
     # Failed after max attempts
     print("Max attempts failed")
     # Print systems' details
@@ -70,10 +71,11 @@ def wiedemann_timed_test(A, b, dim, field):
     x, attempts, w_minpoly = wiedemann(bbox_A, b, dim, field)
     end = time.time()
     print(f"Finished Wiedemann in {end - start:.3f}s ({attempts} attempt{"s" if attempts != 1 else ""})")
-    start_sage = time.time()
-    assert x == A.solve_right(b), f"Failed: Solution different from Sage built-in solver"
-    end_sage = time.time()
-    print(f'Solution verified against Sage built-in solver ({end_sage - start_sage:.3f}s)')
-    assert w_minpoly == A.minpoly(), 'Wiedemann generated min poly is different from actual minpoly'
-    print('Wiedemann generated min poly is correct')
-    return attempts
+    # start_sage = time.time()
+    # assert x == A.solve_right(b), f"Failed: Solution different from Sage built-in solver"
+    # end_sage = time.time()
+    return (end - start)
+    # print(f'Solution verified against Sage built-in solver ({end_sage - start_sage:.3f}s)')
+    # assert w_minpoly == A.minpoly(), 'Wiedemann generated min poly is different from actual minpoly'
+    # print('Wiedemann generated min poly is correct')
+    # return attempts

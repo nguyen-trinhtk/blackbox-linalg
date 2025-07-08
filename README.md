@@ -1,3 +1,2 @@
 # blackbox-linear-algebra
-Common breaks: 
-
+? why does sometimes berlekamp massey fails but still generate correct solution?
