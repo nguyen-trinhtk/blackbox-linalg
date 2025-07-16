@@ -9,10 +9,8 @@ int main()
     typedef Givaro::Modular<double> Field;
     Field F(101);
     
-    // Use SparseMatrix for sparse matrix operations
-    SparseMatrix<Field> A(F, 3, 3); // 3x3 sparse matrix
+    SparseMatrix<Field> A(F, 3, 3);
     
-    // Initialize with some test values - sparse matrices store only non-zero entries
     A.setEntry(0, 0, 1);
     A.setEntry(0, 1, 2);
     A.setEntry(0, 2, 3);
