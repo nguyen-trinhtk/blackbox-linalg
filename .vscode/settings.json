@@ -1,3 +1,7 @@
 {
-    "cmake.sourceDirectory": "/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/linboxbuild/OpenBLAS/driver/level2"
+    "cmake.sourceDirectory": "/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/linboxbuild/OpenBLAS/driver/level2",
+    "files.associations": {
+        "blassolve.C": "cpp",
+        "minpoly.C": "cpp"
+    }
 }
