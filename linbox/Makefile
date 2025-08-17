@@ -21,7 +21,7 @@ test_linbox: test_linbox.cpp
 	$(CXX) $(CXXFLAGS) $(INCLUDES) $(LIBDIRS) -o $@ $< $(LIBS)
 
 clean:
-	rm -f test_linbox *.o
+	rm -f test_linbox test_linbox_dense *.o
 
 run: test_linbox
 	./test_linbox
