@@ -1,0 +1,5 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     gf2x_version_1_2_or_later_required
+relocations:     []
+...
