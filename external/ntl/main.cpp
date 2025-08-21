@@ -1,3 +1,6 @@
+// Data types: ZZ, Vec<ZZ>, Mat<ZZ>, ZZX (Polynomial)
+// ZZ_p: GF(p)
+//initialize field: ZZ_p::init(p)
 #include <NTL/ZZ_pXFactoring.h>
 #include <NTL/ZZ_pEX.h>
 
@@ -27,7 +30,4 @@ int main()
 
    if (CompMod(g, h, f) != 0) // check that g(h) = 0 mod f
       Error("oops (2)");
-
-   cout << "Minimum polynomial g: " << g << endl;
-   cout << "Computation finished successfully." << endl;
 }
