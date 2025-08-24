@@ -19,7 +19,8 @@ wiedemann-analyzer/
 ├── external/               # External dependencies (e.g., NTL, GMP)
 ├── include/                # C++ header files
 ├── scratch/                # Research scripts & notebooks (Python, Jupyter)
-├── linear-algebra-notes/   # Background notes on linear algebra prerequisites
+├── src/                    # Main implementation scripts
+├── theoretical-notes/      # Background notes on linear algebra prerequisites
 └── references/             # Research papers, articles, and citations
 ```
 
