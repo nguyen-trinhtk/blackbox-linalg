@@ -2,7 +2,7 @@
 
 ### Based on Wiedemann's Algorithm — STAR 2025
 
-This is a supporting tool of my research on **Solving Large Linear Systems Efficiently with Wiedemann's Algorithm**.
+This is a supporting tool for my research on **Solving Large Linear Systems Efficiently with Wiedemann's Algorithm**.
 
 ---
 
