@@ -1,4 +1,3 @@
-// Minimal polynomial verification for matrix A and polynomial f over GF(p)
 #include <NTL/ZZ_pXFactoring.h>
 #include <NTL/mat_ZZ_p.h>
 #include <NTL/vec_ZZ_p.h>
@@ -21,18 +20,20 @@ namespace verify {
 
 	bool is_min_poly(const NTL::mat_ZZ_p& A, const NTL::ZZ_pX& f) {
 	NTL::mat_ZZ_p eval = evaluate_poly_matrix(f, A);
-		if (!IsZero(eval)) return false;
+	if (!IsZero(eval)) return false;
 
-		NTL::vec_pair_ZZ_pX_long factors;
-		NTL::CanZass(factors, f);
+	NTL::vec_pair_ZZ_pX_long factors;
+	NTL::CanZass(factors, f);
 
-		for (long i = 0; i < factors.length(); ++i) {
-			NTL::ZZ_pX factor = factors[i].a;
-			// long exp = factors[i].b;
-			NTL::ZZ_pX q = f / factor;
+	for (long i = 0; i < factors.length(); ++i) {
+		NTL::ZZ_pX factor = factors[i].a;
+		long exp = factors[i].b;
+		for (long k = 1; k <= exp; ++k) {
+			NTL::ZZ_pX q = f / power(factor, k);
 			NTL::mat_ZZ_p eval_q = evaluate_poly_matrix(q, A);
 			if (IsZero(eval_q)) return false;
 		}
-		return true;
+	}
+	return true;
 	}
 }
