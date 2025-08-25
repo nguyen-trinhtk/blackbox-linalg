@@ -3,8 +3,7 @@
 #include <NTL/mat_ZZ_p.h>
 #include <random>
 
-// Return a sparse nxn matrix over GF(p) with given density
-namespace matrix {
+namespace matvec {
     inline NTL::mat_ZZ_p sparse_matrix(std::size_t n, long p, double density = 0.1) {
         NTL::ZZ_p::init(NTL::ZZ(p));
         NTL::mat_ZZ_p M;

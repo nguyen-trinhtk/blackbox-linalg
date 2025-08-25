@@ -1,8 +1,8 @@
 #pragma once
 #include <NTL/ZZ_p.h>
 #include <NTL/mat_ZZ_p.h>
-// Return a nxn matrix with random entries in GF(p)
-namespace matrix {
+
+namespace matvec {
     inline NTL::mat_ZZ_p random_matrix(std::size_t n, long p) {
         NTL::ZZ_p::init(NTL::ZZ(p));
         NTL::mat_ZZ_p M;

@@ -2,8 +2,8 @@
 #include <NTL/ZZ_p.h>
 #include <NTL/mat_ZZ_p.h>
 #include <random>
-// Return a random Jordan nxn matrix over GF(p)
-namespace matrix {
+
+namespace matvec {
     inline NTL::mat_ZZ_p jordan_matrix(std::size_t n, long p, const NTL::ZZ_p* eigenval = nullptr) {
         NTL::ZZ_p::init(NTL::ZZ(p));
         NTL::mat_ZZ_p M;

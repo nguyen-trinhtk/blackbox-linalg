@@ -3,8 +3,7 @@
 #include <NTL/mat_ZZ_p.h>
 #include <vector>
 
-// Return a Hankel nxn matrix over GF(p)
-namespace matrix {
+namespace matvec {
 	inline NTL::mat_ZZ_p hankel_matrix(std::size_t n, long p, const std::vector<NTL::ZZ_p>* coeffs = nullptr) {
 		NTL::ZZ_p::init(NTL::ZZ(p));
 		std::vector<NTL::ZZ_p> c;
