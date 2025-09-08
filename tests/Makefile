@@ -24,13 +24,13 @@ wiedemann: run-wiedemann.cpp
 	$(CXX) $(CXXFLAGS) $(INCLUDES) -o $@ $< $(LIBS)
 
 run-matvec: matvec
-	DYLD_LIBRARY_PATH=$(PWD)/../../external/ntl/ntl-build/gmp-install/lib ./matvec
+	DYLD_LIBRARY_PATH=$(PWD)/../external/ntl/ntl-build/gmp-install/lib ./matvec
 
 run-bm: bm
-	DYLD_LIBRARY_PATH=$(PWD)/../../external/ntl/ntl-build/gmp-install/lib ./bm
+	DYLD_LIBRARY_PATH=$(PWD)/../external/ntl/ntl-build/gmp-install/lib ./bm
 
 run-wiedemann: wiedemann
-	DYLD_LIBRARY_PATH=$(PWD)/../../external/ntl/ntl-build/gmp-install/lib ./wiedemann
+	DYLD_LIBRARY_PATH=$(PWD)/../external/ntl/ntl-build/gmp-install/lib ./wiedemann
 
 clean:
 	rm -f main matvec bm wiedemann *.o
