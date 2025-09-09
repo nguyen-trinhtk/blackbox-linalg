@@ -1,13 +1,8 @@
 CXX = g++
 CXXFLAGS = -std=c++11 -Wall -O2
 
-# Include paths for matrix/random-matrix.h, NTL, and GMP
-INCLUDES = -I$(PWD)/../include \
-           -I$(PWD)/../external/ntl/ntl-build/ntl-11.5.1/include \
-           -I$(PWD)/../external/ntl/ntl-build/gmp-install/include
-
-# Link NTL and GMP libraries
-LIBS = $(PWD)/../external/ntl/ntl-build/ntl-11.5.1/src/ntl.a -L$(PWD)/../external/ntl/ntl-build/gmp-install/lib -lgmp
+INCLUDES = -I$(PWD)/../include -I/usr/local/include
+LIBS = -L/usr/local/lib -lntl -lgmp
 
 all: main matvec bm wiedemann
 
@@ -23,16 +18,19 @@ bm: run-bm.cpp
 wiedemann: run-wiedemann.cpp
 	$(CXX) $(CXXFLAGS) $(INCLUDES) -o $@ $< $(LIBS)
 
+run-main: main
+	LD_LIBRARY_PATH=/usr/local/lib ./main
+
 run-matvec: matvec
-	DYLD_LIBRARY_PATH=$(PWD)/../external/ntl/ntl-build/gmp-install/lib ./matvec
+	LD_LIBRARY_PATH=/usr/local/lib ./matvec
 
 run-bm: bm
-	DYLD_LIBRARY_PATH=$(PWD)/../external/ntl/ntl-build/gmp-install/lib ./bm
+	LD_LIBRARY_PATH=/usr/local/lib ./bm
 
 run-wiedemann: wiedemann
-	DYLD_LIBRARY_PATH=$(PWD)/../external/ntl/ntl-build/gmp-install/lib ./wiedemann
+	LD_LIBRARY_PATH=/usr/local/lib ./wiedemann
 
 clean:
 	rm -f main matvec bm wiedemann *.o
 
-.PHONY: all clean run-matvec run-bm run-wiedemann
+.PHONY: all clean run-main run-matvec run-bm run-wiedemann

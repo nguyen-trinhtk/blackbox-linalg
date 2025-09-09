@@ -3,6 +3,7 @@
 #include <NTL/ZZ_pX.h>
 #include <vector>
 #include <cmath>
+#include <algorithm>
 
 namespace wiedemann {
     inline NTL::ZZ_pX berlekamp_massey(const std::vector<NTL::ZZ_p>& sequence) {
@@ -11,7 +12,7 @@ namespace wiedemann {
         long L = 0, m = 1;
         NTL::ZZ_p b = NTL::ZZ_p(1);
 
-        for (long k = 0; k < sequence.size(); ++k) {
+        for (size_t k = 0; k < sequence.size(); ++k) {
             NTL::ZZ_p d = sequence[k];
             for (long i = 1; i <= L; ++i)
                 d += C[i] * sequence[k - i];

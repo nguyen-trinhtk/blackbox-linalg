@@ -1,54 +1,40 @@
-# Optimized Linear System Solver & Analyzer
+# Wiedemann Linear System Solver
 
-### Based on Wiedemann's Algorithm — STAR 2025
+A C++ toolkit for solving large linear systems using Wiedemann's algorithm, with exact arithmetic via NTL and GMP.
 
-This is a supporting tool for my research on **Solving Large Linear Systems Efficiently with Wiedemann's Algorithm**.
+<!-- ## Structure
 
----
+- `include/` — C++ headers (algorithms, matrix/vector types)
+- `tests/` — Test programs and Makefile
+- `external/` — External libraries (NTL, GMP)
+- `docs/` — Project documentation
+- `theoretical-notes/` — Linear algebra notes
+- `scratch/` — Research scripts and notebooks -->
 
-## Core Features
-- C++ solver for large systems with NTL + GMP (exact arithmetic) based on Wiedemann's Algorithm
-- CSV analyzer for structure, stability & runtime metrics
-- Lightweight & reproducible, easy to clone and build
+## Build & Run
 
-## Project Structure
-
-```
-wiedemann-analyzer/
-├── docs/                   # Project documentation (abstract, report, poster)
-├── external/               # External dependencies (e.g., NTL, GMP)
-├── include/                # C++ header files
-├── scratch/                # Research scripts & notebooks (Python, Jupyter)
-├── src/                    # Main implementation scripts
-├── theoretical-notes/      # Background notes on linear algebra prerequisites
-└── references/             # Research papers, articles, and citations
+```sh
+cd tests
+make
+./main        # Run main test
+./matvec      # Run matvec test
+./bm          # Run Berlekamp-Massey test
+./wiedemann   # Run Wiedemann test
 ```
 
-## Installation & Dependencies
+## Docker
 
-Requirements:
+Build and run all tests in Docker:
 
-* [NTL (Number Theory Library)](https://libntl.org/)
-* [GMP (GNU Multiple Precision Arithmetic Library)](https://gmplib.org/)
-* g++ (C++17 or later)
-
-
-## Build Instructions
-
-```bash
+```sh
+docker build -t wiedemann-analyzer .
+docker run wiedemann-analyzer
 ```
 
+All test binaries (`main`, `matvec`, `bm`, `wiedemann`) will be executed automatically in sequence.
 
-## Usage
+## Requirements
 
-```bash
-```
-
-Example output:
-
-```
-```
-
-
-## References
-
+- NTL
+- GMP
+- g++ (C++17+)
