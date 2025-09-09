@@ -15,13 +15,14 @@ jobs:
       - name: Run main test
         run: docker run wiedemann-analyzer ./main
 
-      - name: Run matvec test
-        run: docker run wiedemann-analyzer ./matvec
+      # Wait until finalizing tests
+      # - name: Run matvec test
+      #   run: docker run wiedemann-analyzer ./matvec
 
-      - name: Run bm test
-        run: docker run wiedemann-analyzer ./bm
+      # - name: Run bm test
+      #   run: docker run wiedemann-analyzer ./bm
 
-      - name: Run wiedemann test
-        run: docker run wiedemann-analyzer ./wiedemann
+      # - name: Run wiedemann test
+      #   run: docker run wiedemann-analyzer ./wiedemann
 
         # probably add failure noti

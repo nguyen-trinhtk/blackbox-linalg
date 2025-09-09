@@ -24,14 +24,12 @@ make
 
 ## Docker
 
-Build and run all tests in Docker:
+Build and run tests in Docker:
 
 ```sh
 docker build -t wiedemann-analyzer .
 docker run wiedemann-analyzer
 ```
-
-All test binaries (`main`, `matvec`, `bm`, `wiedemann`) will be executed automatically in sequence.
 
 ## Requirements
 
