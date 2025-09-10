@@ -1,6 +1,6 @@
 # Wiedemann Linear System Solver
 
-A C++ toolkit for solving large linear systems using Wiedemann's algorithm, with exact arithmetic via NTL and GMP.
+A C++ toolkit for solving large linear systems using Wiedemann's algorithm, with exact arithmetic via NTL and GMP
 
 <!-- ## Structure
 
