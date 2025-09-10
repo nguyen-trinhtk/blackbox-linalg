@@ -13,7 +13,7 @@ jobs:
         run: docker build -t wiedemann-analyzer .
 
       - name: Run main test
-        run: docker run wiedemann-analyzer ./main
+        run: docker run wiedemann-analyzer
 
       # Wait until finalizing tests
       # - name: Run matvec test
