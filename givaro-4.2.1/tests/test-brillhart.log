@@ -1,5 +1,0 @@
-BRILL: 0.0126314s (0.01215 cpu) [1001]
-[SOSB] PASSED: 0.0328922s (0.032385 cpu) [993]
-[SOSL] PASSED: 0.00880194s (0.008399 cpu) [1986]
-[SOSR] PASSED: 0.0101309s (0.009682 cpu) [2979]
-PASS test-brillhart (exit status: 0)

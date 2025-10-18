@@ -1,8 +1,0 @@
-[BalStdMidMul] : [1;32mPASSED.[0m
-[BalKaraMidMul] : [1;32mPASSED.[0m
-[BalMidMul] : [1;32mPASSED.[0m
-[UnbalStdMidMul1] : [1;32mPASSED.[0m
-[UnbalMidMul1] : [1;32mPASSED.[0m
-[UnbalStdMidMul2] : [1;32mPASSED.[0m
-[UnbalMidMul2] : [1;32mPASSED.[0m
-PASS test-midmul (exit status: 0)

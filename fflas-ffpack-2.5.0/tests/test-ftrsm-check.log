@@ -1,8 +1,0 @@
-m= 74    n= 36
-Verification successful
-m= 63    n= 77
-Verification successful
-m= 12    n= 18
-Verification successful
-3/3 tests were successful.
-PASS test-ftrsm-check (exit status: 0)

@@ -1,4 +1,0 @@
-#ifndef __FFLASFFPACK_CHARPOLY_LUKrylov_ArithProg_THRESHOLD
-#define __FFLASFFPACK_CHARPOLY_LUKrylov_ArithProg_THRESHOLD 1344
-#endif
-
