@@ -1,0 +1,12 @@
+-1: -1
+-1: -1
+-1: -1
+-1: -1
+1: 1
+1: 1
+0: 0
+[TRD] PASSED.
+[TFI] PASSED: Modular_implem<int64_t, uint64_t, uint64_t> modulo 19
+23652993163743551950326039814453353621662
+[PRI] PASSED.
+PASS test-regression (exit status: 0)

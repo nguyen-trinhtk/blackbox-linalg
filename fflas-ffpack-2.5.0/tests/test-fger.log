@@ -1,0 +1,25 @@
+Checking Modular_implem<double, double, uint64_t> modulo 13921651... PASSED 
+Checking Modular_implem<double, double, uint64_t> modulo 2942677... PASSED 
+Checking Modular_implem<double, double, uint64_t> modulo 72007153... PASSED 
+Checking .....ModularBalanced<double> modulo 148139363... PASSED 
+Checking .....ModularBalanced<double> modulo 137160409... PASSED 
+Checking ......ModularBalanced<double> modulo 72007153... PASSED 
+Checking Modular_implem<float, float, uint32_t> modulo 3457... PASSED 
+Checking Modular_implem<float, float, uint32_t> modulo 2357... PASSED 
+Checking Modular_implem<float, float, uint32_t> modulo 3593... PASSED 
+Checking ...........ModularBalanced<float> modulo 3457... PASSED 
+Checking ...........ModularBalanced<float> modulo 6451... PASSED 
+Checking ...........ModularBalanced<float> modulo 7691... PASSED 
+Checking Modular_implem<int32_t, uint32_t, uint32_t> modulo 28031... PASSED 
+Checking Modular_implem<int32_t, uint32_t, uint32_t> modulo 41299... PASSED 
+Checking Modular_implem<int32_t, uint32_t, uint32_t> modulo 29297... PASSED 
+Checking ........ModularBalanced<int32_t> modulo 28031... PASSED 
+Checking .......ModularBalanced<int32_t> modulo 112951... PASSED 
+Checking ........ModularBalanced<int32_t> modulo 48649... PASSED 
+Checking Modular_implem<int64_t, uint64_t, uint64_t> modulo 2295623039... PASSED 
+Checking Modular_implem<int64_t, uint64_t, uint64_t> modulo 524138801... PASSED 
+Checking Modular_implem<int64_t, uint64_t, uint64_t> modulo 3024797177... PASSED 
+Checking ...ModularBalanced<int64_t> modulo 2295623039... PASSED 
+Checking ....ModularBalanced<int64_t> modulo 524138801... PASSED 
+Checking ...ModularBalanced<int64_t> modulo 3024797177... PASSED 
+PASS test-fger (exit status: 0)

@@ -1,0 +1,18 @@
+
+---------------------------------------------------------------------
+Sat Oct 18 14:45:52 2025
+
+Threshold between CharPoly algorithms LUKrylov <-> ArithProg (using ModularBalanced<double> modulo 4194301)
+
+Charpoly:  n                   LUKrylov                        ArithProg
+                    seconds            Gfops          seconds            Gfops
+      1024         0.292431           9.9138         0.404169            7.173
+      1152         0.434814          9.49331         0.473052          8.72594
+      1280         0.563919           10.041         0.656921          8.61947
+      1408         0.827023          9.11285         0.769456          9.79463
+      1408         0.950197          7.93155         0.818878          9.20349
+      1344         0.747477          8.76928         0.690165          9.49749
+      1312         0.605241          10.0748         0.607115          10.0437
+      1328         0.619565          10.2064         0.624369          10.1278
+
+defined __FFLASFFPACK_CHARPOLY_LUKrylov_ArithProg_THRESHOLD to 1344

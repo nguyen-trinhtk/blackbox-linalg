@@ -1,0 +1,33 @@
+Checking Modular_implem<double, double, uint64_t> modulo 19428931 ... PASSED 
+Checking Modular_implem<double, double, uint64_t> modulo 42655913 ... PASSED 
+Checking ..........ModularBalanced<double> modulo 108616973 ... PASSED 
+Checking ..........ModularBalanced<double> modulo 176873651 ... PASSED 
+Checking Modular_implem<float, float, uint32_t> modulo 3347 ... PASSED 
+Checking .Modular_implem<float, float, uint32_t> modulo 179 ... PASSED 
+Checking ................ModularBalanced<float> modulo 7433 ... PASSED 
+Checking .................ModularBalanced<float> modulo 179 ... PASSED 
+Checking Modular_implem<int32_t, uint32_t, uint32_t> modulo 23833 ... PASSED 
+Checking Modular_implem<int32_t, uint32_t, uint32_t> modulo 33767 ... PASSED 
+Checking .............ModularBalanced<int32_t> modulo 89363 ... PASSED 
+Checking .............ModularBalanced<int32_t> modulo 57503 ... PASSED 
+Checking Modular_implem<int64_t, uint64_t, uint64_t> modulo 2703783517 ... PASSED 
+Checking Modular_implem<int64_t, uint64_t, uint64_t> modulo 1787486383 ... PASSED 
+Checking Modular_implem<int64_t, uint64_t, uint64_t> modulo 24730889 ... PASSED 
+Checking Modular_implem<int64_t, uint64_t, uint64_t> modulo 25878691 ... PASSED 
+Checking ........ModularBalanced<int64_t> modulo 5531233739 ... PASSED 
+Checking ........ModularBalanced<int64_t> modulo 1189677893 ... PASSED 
+Checking ..........ModularBalanced<int64_t> modulo 24730889 ... PASSED 
+Checking ..........ModularBalanced<int64_t> modulo 25878691 ... PASSED 
+Checking Modular_implem<RecInt::rint<7>, RecInt::rint<7>, RecInt::rint<7>> modulo 7000975766686620949 ... PASSED 
+Checking Modular_implem<RecInt::rint<7>, RecInt::rint<7>, RecInt::rint<7>> modulo 9207472993130438773 ... PASSED 
+Checking Modular_implem<RecInt::ruint<7>, RecInt::ruint<7>, RecInt::ruint<7>> modulo 7000975766686620949 ... PASSED 
+Checking Modular_implem<RecInt::ruint<7>, RecInt::ruint<7>, RecInt::ruint<7>> modulo 9207472993130438773 ... PASSED 
+Checking Modular_implem<RecInt::rint<8>, RecInt::rint<8>, RecInt::rint<8>> modulo 96402208807881053118063575726430968999 ... PASSED 
+Checking Modular_implem<RecInt::rint<8>, RecInt::rint<8>, RecInt::rint<8>> modulo 115262341612476986430574544456281415693 ... PASSED 
+Checking Modular_implem<RecInt::ruint<7>, RecInt::ruint<8>, RecInt::ruint<7>> modulo 96402208807881053118063575726430968999 ... PASSED 
+Checking Modular_implem<RecInt::ruint<7>, RecInt::ruint<8>, RecInt::ruint<7>> modulo 115262341612476986430574544456281415693 ... PASSED 
+Checking Modular_implem<Integer, Integer, Integer> modulo 7569063434560518060329337358228898784220940659605873865827086643776038262820083584041832919556226417968068530802217181997577890196585877019318787413466209 ... PASSED 
+Checking Modular_implem<Integer, Integer, Integer> modulo 12149677255149230677119216055895884581330923867625952739416577236707902114526823212842628299362910080077465259374782058416917467534756506963608386306498647 ... PASSED 
+Checking ....................................ZRing<Integer> ... PASSED 
+Checking ....................................ZRing<Integer> ... PASSED 
+PASS test-fgemm (exit status: 0)

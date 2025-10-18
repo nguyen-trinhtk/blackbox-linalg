@@ -1,0 +1,31 @@
+Checking Modular_implem<float, float, uint32_t> modulo 1201 ... PASSED 
+Checking Modular_implem<float, float, uint32_t> modulo 3947 ... PASSED 
+Checking Modular_implem<float, float, uint32_t> modulo 541 ... PASSED 
+Checking Modular_implem<double, double, uint64_t> modulo 52090033 ... PASSED 
+Checking Modular_implem<double, double, uint64_t> modulo 16236403 ... PASSED 
+Checking Modular_implem<double, double, uint64_t> modulo 67252763 ... PASSED 
+Checking ......ModularBalanced<float> modulo 5297 ... PASSED 
+Checking ......ModularBalanced<float> modulo 8053 ... PASSED 
+Checking ......ModularBalanced<float> modulo 4639 ... PASSED 
+Checking ModularBalanced<double> modulo 186307757 ... PASSED 
+Checking ModularBalanced<double> modulo 150454127 ... PASSED 
+Checking .ModularBalanced<double> modulo 67252763 ... PASSED 
+Checking Modular_implem<int32_t, uint32_t, uint32_t> modulo 12659 ... PASSED 
+Checking Modular_implem<int32_t, uint32_t, uint32_t> modulo 34403 ... PASSED 
+Checking Modular_implem<int32_t, uint32_t, uint32_t> modulo 12829 ... PASSED 
+Checking ...ModularBalanced<int32_t> modulo 54449 ... PASSED 
+Checking ..ModularBalanced<int32_t> modulo 114553 ... PASSED 
+Checking ...ModularBalanced<int32_t> modulo 12829 ... PASSED 
+Checking Modular_implem<int64_t, uint64_t, uint64_t> modulo 1260049559 ... PASSED 
+Checking Modular_implem<int64_t, uint64_t, uint64_t> modulo 150454127 ... PASSED 
+Checking Modular_implem<int64_t, uint64_t, uint64_t> modulo 872559131 ... PASSED 
+Checking ModularBalanced<int64_t> modulo 5555016869 ... PASSED 
+Checking ModularBalanced<int64_t> modulo 4445421389 ... PASSED 
+Checking ModularBalanced<int64_t> modulo 872559131 ... PASSED 
+Checking Modular_implem<Integer, Integer, Integer> modulo 17 ... PASSED 
+Checking Modular_implem<Integer, Integer, Integer> modulo 23 ... PASSED 
+Checking Modular_implem<Integer, Integer, Integer> modulo 17 ... PASSED 
+Checking Modular_implem<Integer, Integer, Integer> modulo 7582516832639862296192119254265254034753990117239787610294334960067225536857303303869167763856489125141751690745779674243057042887089408864511620147762327 ... PASSED 
+Checking Modular_implem<Integer, Integer, Integer> modulo 7929033760406102615089068775907190990931699347466851031140367627031064178267718327911469204646612374412757094654622906075613526204862546648589789547708207 ... PASSED 
+Checking Modular_implem<Integer, Integer, Integer> modulo 13078937567850324050406814946401159957749019551690118168026374305857456677276717957586976956942262180477761400843119867914988900708913733467431225318846223 ... PASSED 
+PASS test-quasisep (exit status: 0)
