@@ -1,0 +1,2 @@
+dummy.lo: dummy.C ../givaro-config.h
+../givaro-config.h:

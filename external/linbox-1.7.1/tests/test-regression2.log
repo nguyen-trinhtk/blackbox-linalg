@@ -1,0 +1,8 @@
+Test Wiedemann Singular ... PASSED.
+Test Dixon Det 1 ... Matrix( 2,2,
+[[ 26, 5],
+ [ 5, 1]])
+<-959558580,-451007454>
+<1295478690,-6928400904>
+PASSED.
+PASS test-regression2 (exit status: 0)
