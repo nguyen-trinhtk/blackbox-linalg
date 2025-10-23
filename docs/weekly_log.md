@@ -5,6 +5,9 @@ Done:
 - Probability of non-derogatory
 
 To-do:
+- PreConCyc vs Wiedemann
+- Diagonal precond, diagonal scaling
+- Zippel-Schwartz
 
 ### Fall W4: October 16, 2025
 Done: 
