@@ -9,13 +9,13 @@ graph TD
     direction TB
     MinPoly["MinPoly (scalar Wiedemann)"]
     LinSolve0["LinSolve0"]
-    Singularity["Singularity<br>"]
+    Singularity["Singularity"]
     BlockWiedemann["Block Wiedemann"]
 
-    style MinPoly fill:#fff,stroke:#333,stroke-width:2px,padding:0px,margin:0px
-    style LinSolve0 fill:#fff,stroke:#333,stroke-width:2px,padding:0px,margin:0px
-    style Singularity fill:#fff,stroke:#333,stroke-width:2px,padding:0px,margin:0px
-    style BlockWiedemann fill:#fff,stroke:#333,stroke-width:2px,padding:0px,margin:0px
+    style MinPoly fill:#fff,stroke:#333,stroke-width:2px
+    style LinSolve0 fill:#fff,stroke:#333,stroke-width:2px
+    style Singularity fill:#fff,stroke:#333,stroke-width:2px
+    style BlockWiedemann fill:#fff,stroke:#333,stroke-width:2px
   end
 
   %% Subgraph Column 2 (blue)
@@ -27,11 +27,11 @@ graph TD
     Cyc["Cyc"]
     CycNil["CycNil"]
 
-    style RxR fill:#fff,stroke:#333,stroke-width:2px,padding:0px,margin:0px
-    style SxS fill:#fff,stroke:#333,stroke-width:2px,padding:0px,margin:0px
-    style Nil fill:#fff,stroke:#333,stroke-width:2px,padding:0px,margin:0px
-    style Cyc fill:#fff,stroke:#333,stroke-width:2px,padding:0px,margin:0px
-    style CycNil fill:#fff,stroke:#333,stroke-width:2px,padding:0px,margin:0px
+    style RxR fill:#fff,stroke:#333,stroke-width:2px
+    style SxS fill:#fff,stroke:#333,stroke-width:2px
+    style Nil fill:#fff,stroke:#333,stroke-width:2px
+    style Cyc fill:#fff,stroke:#333,stroke-width:2px
+    style CycNil fill:#fff,stroke:#333,stroke-width:2px
   end
 
   %% Subgraph Column 3 (pink)
@@ -41,10 +41,14 @@ graph TD
     Rank["Rank"]
     Det["Det"]
 
-    style LinSolve1 fill:#fff,stroke:#333,stroke-width:2px,padding:0px,margin:0px
-    style Rank fill:#fff,stroke:#333,stroke-width:2px,padding:0px,margin:0px
-    style Det fill:#fff,stroke:#333,stroke-width:2px,padding:0px,margin:0px
+    style LinSolve1 fill:#fff,stroke:#333,stroke-width:2px
+    style Rank fill:#fff,stroke:#333,stroke-width:2px
+    style Det fill:#fff,stroke:#333,stroke-width:2px
   end
+
+  %% Invisible edges to force vertical placement under LinSolve0
+  LinSolve0 --- Singularity
+  LinSolve0 --- BlockWiedemann
 
   %% Connections across columns
   MinPoly --> Cyc
