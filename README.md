@@ -1,7 +1,20 @@
-# Wiedemann solver & analyzer for efficient exact linear algebra
+# Black-box Linear Algebra
 
-### Installing LinBox
+### Introduction
+This repository serves as a personal log for my research on black-box linear algebra (with a strong emphasis on Wiedemann algorithm). Currently, I'm investigating preconditioners for solving large, sparse linear systems in finite fields. To support this work, I also include a solve and analysis tool designed to evaluate probabilistic nature of Monte Carlo algorithms and exploit structural characteristic of matrices that can possible influence that probability. Further details about the repository and the tool are provided below.
 
-This project heavily relies on LinBox - a template library for exact, high performance linear algebra. LinBox 1.7.1 (lastest version) depends on Givaro (requires GMP) and FFLAS-FFPACK (requires OpenBLAS/ATLAS). Currently, we are using GMP 6.3.0, Givaro 4.2.1, OpenBLAS 0.3.30, and FFLAS-FFPACK 2.5.0. All those third-party dependencies are placed in `external`. 
+### Repo Structure
 
-For one-step installation, please run the `install_linbox.sh` in `external`. Note that the root working directory should be passed to `$ROOT` before running. Alternatively, a detailed step-by-step LinBox installation instructions is further specified in `installation_guides.md`.
+### Linear Solver & Analyzer Tool
+##### 1. Installing dependencies
+###### LinBox
+This tool relies on LinBox 1.7.1 (lastest version), which depends on Givaro (requires GMP) and FFLAS-FFPACK (requires OpenBLAS/ATLAS). All those third-party dependencies are placed in `external`. 
+
+For one-step installation, run the `install_linbox.sh` in `automation`. Alternatively, a detailed step-by-step installation instructions is further specified in `installation_guides.md`.
+
+##### Python libraries
+All Python dependencies have been specified in `requirements.txt`. Run `pip install requirements.txt` should install prerequisites for the tool.
+
+### Using the tool
+
+### Research notes
