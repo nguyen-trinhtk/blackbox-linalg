@@ -1,4 +1,6 @@
 # LinBox Installation Guides
+This tool is heavily dependent on LinBox, which is a template library for exact, high-performance linear algebra computations. Currently, we are using GMP 6.3.0, Givaro 4.2.1, OpenBLAS 0.3.30, and FFLAS-FFPACK 2.5.0. 
+
 
 NOTE: $ROOT is path to current working directory
 
