@@ -1,4 +1,4 @@
-# Black-box Linear Algebra
+# Black-box Linear Algebra (Wiedemann Algorithm)
 
 ### Introduction
 This repository serves as a personal log for my research on black-box linear algebra (with a strong emphasis on Wiedemann algorithm). Currently, I'm investigating preconditioners for solving large, sparse linear systems in finite fields. 
