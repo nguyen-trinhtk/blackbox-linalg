@@ -957,12 +957,12 @@ givratio.lo: givratio.C \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/unistd.h \
   givaro/givrational.h ../../../src/kernel/integer/givaro/givinteger.h \
   ../../../givaro-config.h ../../../src/kernel/gmp++/gmp++.h \
-  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/gmp-6.3.0/include/gmpxx.h \
+  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/gmp-6.3.0/include/gmpxx.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/cfloat \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/float.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/16/include/float.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/float.h \
-  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/gmp-6.3.0/include/gmp.h \
+  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/gmp-6.3.0/include/gmp.h \
   ../../../src/kernel/gmp++/gmp++/gmp++_int.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/list \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/assert.h \
@@ -1962,12 +1962,12 @@ givaro/givrational.h:
 ../../../src/kernel/integer/givaro/givinteger.h:
 ../../../givaro-config.h:
 ../../../src/kernel/gmp++/gmp++.h:
-/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/gmp-6.3.0/include/gmpxx.h:
+/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/gmp-6.3.0/include/gmpxx.h:
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/cfloat:
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/float.h:
 /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/16/include/float.h:
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/float.h:
-/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/gmp-6.3.0/include/gmp.h:
+/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/gmp-6.3.0/include/gmp.h:
 ../../../src/kernel/gmp++/gmp++/gmp++_int.h:
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/list:
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/assert.h:

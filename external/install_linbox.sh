@@ -86,11 +86,11 @@ make && make check && make install
 cd ..
 
 # Export LinBox env
-export PATH="$ROOT/linbox/bin:$PATH"
-export LD_LIBRARY_PATH="$ROOT/linbox/lib:$LD_LIBRARY_PATH"
-export PKG_CONFIG_PATH="$ROOT/linbox/lib/pkgconfig:$PKG_CONFIG_PATH"
-export CPPFLAGS="$CPPFLAGS -I$ROOT/linbox/include"
-export LDFLAGS="$LDFLAGS -L$ROOT/linbox/lib"
+export PATH="$ROOT/linbox-1.7.1/bin:$PATH"
+export LD_LIBRARY_PATH="$ROOT/linbox-1.7.1/lib:$LD_LIBRARY_PATH"
+export PKG_CONFIG_PATH="$ROOT/linbox-1.7.1/lib/pkgconfig:$PKG_CONFIG_PATH"
+export CPPFLAGS="$CPPFLAGS -I$ROOT/linbox-1.7.1/include"
+export LDFLAGS="$LDFLAGS -L$ROOT/linbox-1.7.1/lib"
 
 echo "" >> ~/.bashrc
 echo "# >>> LinBox environment setup >>>" >> ~/.bashrc

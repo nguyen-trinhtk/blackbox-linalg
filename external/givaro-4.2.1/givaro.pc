@@ -1,7 +1,7 @@
-prefix=/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1
-exec_prefix=/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1
+prefix=/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1
+exec_prefix=/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1
 libdir=${exec_prefix}/lib
-includedir=/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include
+includedir=/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include
 
 Name: Givaro
 Description: C++ library for arithmetic and algebraic computations

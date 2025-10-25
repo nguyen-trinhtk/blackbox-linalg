@@ -1,0 +1,17 @@
+name: Minimal CI
+
+on:
+  push: {}
+  pull_request: {}
+
+jobs:
+  pass:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout (optional)
+        uses: actions/checkout@v3
+
+      - name: Succeed
+        run: |
+          echo "workflow."
+          exit 0

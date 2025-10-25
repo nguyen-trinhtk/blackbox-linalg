@@ -1,10 +1,10 @@
 test-fft.o: test-fft.C ../linbox/linbox-config.h \
-  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/fflas-ffpack-2.5.0/include/fflas-ffpack/fflas-ffpack-config.h \
-  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/fflas-ffpack-2.5.0/include/fflas-ffpack/config.h \
-  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/fflas-ffpack-2.5.0/include/fflas-ffpack/fflas-ffpack-thresholds.h \
-  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/fflas-ffpack-2.5.0/include/fflas-ffpack/fflas-ffpack-default-thresholds.h \
-  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/givaro/givconfig.h \
-  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/givaro-config.h \
+  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/fflas-ffpack-2.5.0/include/fflas-ffpack/fflas-ffpack-config.h \
+  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/fflas-ffpack-2.5.0/include/fflas-ffpack/config.h \
+  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/fflas-ffpack-2.5.0/include/fflas-ffpack/fflas-ffpack-thresholds.h \
+  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/fflas-ffpack-2.5.0/include/fflas-ffpack/fflas-ffpack-default-thresholds.h \
+  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/givaro/givconfig.h \
+  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/givaro-config.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/stdint.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__config \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__config_site \
@@ -967,84 +967,84 @@ test-fft.o: test-fft.C ../linbox/linbox-config.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/print \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/unistd.h \
   ../linbox/algorithms/polynomial-matrix/fft.h ../linbox/util/error.h \
-  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/fflas-ffpack-2.5.0/include/fflas-ffpack/fflas/fflas_simd.h \
-  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/fflas-ffpack-2.5.0/include/fflas-ffpack/utils/fflas_intrinsic.h \
+  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/fflas-ffpack-2.5.0/include/fflas-ffpack/fflas/fflas_simd.h \
+  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/fflas-ffpack-2.5.0/include/fflas-ffpack/utils/fflas_intrinsic.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/16/include/arm_neon.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/16/include/arm_bf16.h \
-  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/fflas-ffpack-2.5.0/include/fflas-ffpack/utils/debug.h \
+  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/fflas-ffpack-2.5.0/include/fflas-ffpack/utils/debug.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/sstream \
-  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/fflas-ffpack-2.5.0/include/fflas-ffpack/utils/align-allocator.h \
+  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/fflas-ffpack-2.5.0/include/fflas-ffpack/utils/align-allocator.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/assert.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/_static_assert.h \
-  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/givaro/givtypestring.h \
-  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/fflas-ffpack-2.5.0/include/fflas-ffpack/fflas/fflas_simd/simd_modular.inl \
+  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/givaro/givtypestring.h \
+  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/fflas-ffpack-2.5.0/include/fflas-ffpack/fflas/fflas_simd/simd_modular.inl \
   ../linbox/algorithms/polynomial-matrix/fft-floating.inl \
-  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/givaro/givpower.h \
+  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/givaro/givpower.h \
   ../linbox/algorithms/polynomial-matrix/fft-simd.h \
   ../linbox/util/debug.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/list \
   ../linbox/util/debug.C \
-  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/givaro/givprint.h \
+  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/givaro/givprint.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/set \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__tree \
-  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/givaro/modular.h \
-  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/givaro/modular-integral.h \
-  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/givaro/givinteger.h \
-  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/gmp++/gmp++.h \
-  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/gmp-6.3.0/include/gmpxx.h \
-  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/gmp-6.3.0/include/gmp.h \
-  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/gmp++/gmp++_int.h \
-  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/recint/ruconvert.h \
-  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/recint/rumanip.h \
-  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/recint/ruruint.h \
-  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/recint/recdefine.h \
-  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/recint/reclonglong.h \
-  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/recint/rushift.h \
-  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/recint/rconvert.h \
-  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/recint/rrint.h \
-  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/recint/rutools.h \
-  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/recint/rufiddling.h \
-  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/recint/ruadd.h \
-  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/recint/rucmp.h \
-  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/givaro/givcaster.h \
-  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/gmp++/gmp++_int_rand.inl \
-  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/givaro/givtimer.h \
-  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/givaro/givrandom.h \
-  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/givaro/udl.h \
+  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/givaro/modular.h \
+  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/givaro/modular-integral.h \
+  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/givaro/givinteger.h \
+  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/gmp++/gmp++.h \
+  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/gmp-6.3.0/include/gmpxx.h \
+  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/gmp-6.3.0/include/gmp.h \
+  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/gmp++/gmp++_int.h \
+  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/recint/ruconvert.h \
+  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/recint/rumanip.h \
+  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/recint/ruruint.h \
+  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/recint/recdefine.h \
+  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/recint/reclonglong.h \
+  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/recint/rushift.h \
+  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/recint/rconvert.h \
+  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/recint/rrint.h \
+  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/recint/rutools.h \
+  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/recint/rufiddling.h \
+  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/recint/ruadd.h \
+  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/recint/rucmp.h \
+  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/givaro/givcaster.h \
+  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/gmp++/gmp++_int_rand.inl \
+  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/givaro/givtimer.h \
+  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/givaro/givrandom.h \
+  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/givaro/udl.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/time.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_timeval64.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_select.h \
-  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/givaro/givbasictype.h \
-  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/givaro/givinit.h \
-  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/givaro/giverror.h \
-  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/givaro/givranditer.h \
-  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/givaro/random-integer.h \
-  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/givaro/zring.h \
-  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/givaro/unparametric-operations.h \
-  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/givaro/ring-interface.h \
-  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/givaro/modular-general.h \
-  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/givaro/modular-general.inl \
-  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/givaro/modular-implem.h \
-  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/givaro/modular-mulprecomp.inl \
-  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/givaro/modular-integral.inl \
-  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/givaro/modular-floating.h \
-  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/givaro/modular-floating.inl \
-  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/givaro/modular-integer.h \
-  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/givaro/modular-integer.inl \
-  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/givaro/modular-inttype.h \
-  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/givaro/modular-inttype.inl \
-  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/givaro/modular-log16.h \
-  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/givaro/modular-log16.inl \
-  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/givaro/modular-ruint.h \
-  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/recint/ruint.h \
-  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/recint/rusub.h \
-  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/recint/rumul.h \
-  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/recint/rudiv.h \
-  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/recint/ruexp.h \
-  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/recint/rugcd.h \
-  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/recint/ruinvmod.h \
-  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/recint/ruaddmul.h \
-  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/recint/rurandom.h \
+  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/givaro/givbasictype.h \
+  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/givaro/givinit.h \
+  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/givaro/giverror.h \
+  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/givaro/givranditer.h \
+  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/givaro/random-integer.h \
+  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/givaro/zring.h \
+  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/givaro/unparametric-operations.h \
+  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/givaro/ring-interface.h \
+  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/givaro/modular-general.h \
+  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/givaro/modular-general.inl \
+  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/givaro/modular-implem.h \
+  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/givaro/modular-mulprecomp.inl \
+  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/givaro/modular-integral.inl \
+  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/givaro/modular-floating.h \
+  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/givaro/modular-floating.inl \
+  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/givaro/modular-integer.h \
+  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/givaro/modular-integer.inl \
+  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/givaro/modular-inttype.h \
+  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/givaro/modular-inttype.inl \
+  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/givaro/modular-log16.h \
+  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/givaro/modular-log16.inl \
+  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/givaro/modular-ruint.h \
+  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/recint/ruint.h \
+  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/recint/rusub.h \
+  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/recint/rumul.h \
+  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/recint/rudiv.h \
+  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/recint/ruexp.h \
+  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/recint/rugcd.h \
+  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/recint/ruinvmod.h \
+  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/recint/ruaddmul.h \
+  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/recint/rurandom.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/random \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__random/bernoulli_distribution.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__random/uniform_real_distribution.h \
@@ -1093,54 +1093,54 @@ test-fft.o: test-fft.C ../linbox/linbox-config.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__random/seed_seq.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__random/student_t_distribution.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__random/weibull_distribution.h \
-  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/recint/rudisplay.h \
+  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/recint/rudisplay.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/iomanip \
-  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/recint/rint.h \
-  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/recint/radd.h \
-  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/recint/rsub.h \
-  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/recint/rmul.h \
-  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/recint/rdiv.h \
+  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/recint/rint.h \
+  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/recint/radd.h \
+  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/recint/rsub.h \
+  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/recint/rmul.h \
+  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/recint/rdiv.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/cassert \
-  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/recint/rfiddling.h \
-  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/recint/rcmp.h \
-  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/recint/rrandom.h \
-  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/recint/rdisplay.h \
-  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/givaro/modular-ruint.inl \
-  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/givaro/modular-extended.h \
-  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/givaro/modular-extended.inl \
-  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/recint/recint.h \
-  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/recint/rmint.h \
-  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/recint/rmbrmint.h \
-  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/recint/rmdefine.h \
-  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/recint/rmbmodule.h \
-  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/recint/rmbreduc.h \
-  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/recint/rmbmul.h \
-  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/recint/rmmul.h \
-  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/recint/rmbinv.h \
-  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/recint/rmbexp.h \
-  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/recint/rmbaddmul.h \
-  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/recint/rmadd.h \
-  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/recint/rmneg.h \
-  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/recint/rmsub.h \
-  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/recint/rmdiv.h \
-  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/recint/rmcmp.h \
-  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/recint/rmrandom.h \
-  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/recint/rmgrmint.h \
-  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/recint/rmgreduc.h \
-  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/recint/rmextra.h \
-  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/recint/rmmanip.h \
-  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/recint/rmdisplay.h \
-  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/recint/rmconvert.h \
-  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/recint/rmintmg.h \
-  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/recint/rmgmodule.h \
-  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/recint/rmgmul.h \
-  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/recint/rmginv.h \
-  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/recint/rmgexp.h \
-  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/recint/rmgaddmul.h \
+  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/recint/rfiddling.h \
+  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/recint/rcmp.h \
+  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/recint/rrandom.h \
+  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/recint/rdisplay.h \
+  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/givaro/modular-ruint.inl \
+  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/givaro/modular-extended.h \
+  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/givaro/modular-extended.inl \
+  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/recint/recint.h \
+  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/recint/rmint.h \
+  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/recint/rmbrmint.h \
+  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/recint/rmdefine.h \
+  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/recint/rmbmodule.h \
+  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/recint/rmbreduc.h \
+  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/recint/rmbmul.h \
+  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/recint/rmmul.h \
+  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/recint/rmbinv.h \
+  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/recint/rmbexp.h \
+  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/recint/rmbaddmul.h \
+  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/recint/rmadd.h \
+  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/recint/rmneg.h \
+  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/recint/rmsub.h \
+  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/recint/rmdiv.h \
+  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/recint/rmcmp.h \
+  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/recint/rmrandom.h \
+  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/recint/rmgrmint.h \
+  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/recint/rmgreduc.h \
+  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/recint/rmextra.h \
+  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/recint/rmmanip.h \
+  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/recint/rmdisplay.h \
+  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/recint/rmconvert.h \
+  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/recint/rmintmg.h \
+  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/recint/rmgmodule.h \
+  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/recint/rmgmul.h \
+  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/recint/rmginv.h \
+  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/recint/rmgexp.h \
+  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/recint/rmgaddmul.h \
   ../linbox/algorithms/polynomial-matrix/fft-utils.h \
   ../linbox/algorithms/polynomial-matrix/fft-integral.inl \
   ../linbox/randiter/random-fftprime.h ../linbox/integer.h \
-  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/givaro/givspyinteger.h \
+  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/givaro/givspyinteger.h \
   ../linbox/util/timer.h ../linbox/util/commentator.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/map \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/fstream \
@@ -1163,14 +1163,14 @@ test-fft.o: test-fft.C ../linbox/linbox-config.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__filesystem/recursive_directory_iterator.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__filesystem/u8path.h \
   ../linbox/util/commentator.inl ../linbox/util/args-parser.h \
-  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/fflas-ffpack-2.5.0/include/fflas-ffpack/utils/args-parser.h
+  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/fflas-ffpack-2.5.0/include/fflas-ffpack/utils/args-parser.h
 ../linbox/linbox-config.h:
-/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/fflas-ffpack-2.5.0/include/fflas-ffpack/fflas-ffpack-config.h:
-/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/fflas-ffpack-2.5.0/include/fflas-ffpack/config.h:
-/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/fflas-ffpack-2.5.0/include/fflas-ffpack/fflas-ffpack-thresholds.h:
-/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/fflas-ffpack-2.5.0/include/fflas-ffpack/fflas-ffpack-default-thresholds.h:
-/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/givaro/givconfig.h:
-/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/givaro-config.h:
+/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/fflas-ffpack-2.5.0/include/fflas-ffpack/fflas-ffpack-config.h:
+/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/fflas-ffpack-2.5.0/include/fflas-ffpack/config.h:
+/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/fflas-ffpack-2.5.0/include/fflas-ffpack/fflas-ffpack-thresholds.h:
+/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/fflas-ffpack-2.5.0/include/fflas-ffpack/fflas-ffpack-default-thresholds.h:
+/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/givaro/givconfig.h:
+/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/givaro-config.h:
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/stdint.h:
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__config:
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__config_site:
@@ -2134,84 +2134,84 @@ test-fft.o: test-fft.C ../linbox/linbox-config.h \
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/unistd.h:
 ../linbox/algorithms/polynomial-matrix/fft.h:
 ../linbox/util/error.h:
-/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/fflas-ffpack-2.5.0/include/fflas-ffpack/fflas/fflas_simd.h:
-/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/fflas-ffpack-2.5.0/include/fflas-ffpack/utils/fflas_intrinsic.h:
+/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/fflas-ffpack-2.5.0/include/fflas-ffpack/fflas/fflas_simd.h:
+/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/fflas-ffpack-2.5.0/include/fflas-ffpack/utils/fflas_intrinsic.h:
 /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/16/include/arm_neon.h:
 /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/16/include/arm_bf16.h:
-/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/fflas-ffpack-2.5.0/include/fflas-ffpack/utils/debug.h:
+/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/fflas-ffpack-2.5.0/include/fflas-ffpack/utils/debug.h:
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/sstream:
-/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/fflas-ffpack-2.5.0/include/fflas-ffpack/utils/align-allocator.h:
+/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/fflas-ffpack-2.5.0/include/fflas-ffpack/utils/align-allocator.h:
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/assert.h:
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/_static_assert.h:
-/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/givaro/givtypestring.h:
-/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/fflas-ffpack-2.5.0/include/fflas-ffpack/fflas/fflas_simd/simd_modular.inl:
+/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/givaro/givtypestring.h:
+/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/fflas-ffpack-2.5.0/include/fflas-ffpack/fflas/fflas_simd/simd_modular.inl:
 ../linbox/algorithms/polynomial-matrix/fft-floating.inl:
-/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/givaro/givpower.h:
+/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/givaro/givpower.h:
 ../linbox/algorithms/polynomial-matrix/fft-simd.h:
 ../linbox/util/debug.h:
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/list:
 ../linbox/util/debug.C:
-/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/givaro/givprint.h:
+/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/givaro/givprint.h:
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/set:
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__tree:
-/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/givaro/modular.h:
-/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/givaro/modular-integral.h:
-/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/givaro/givinteger.h:
-/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/gmp++/gmp++.h:
-/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/gmp-6.3.0/include/gmpxx.h:
-/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/gmp-6.3.0/include/gmp.h:
-/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/gmp++/gmp++_int.h:
-/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/recint/ruconvert.h:
-/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/recint/rumanip.h:
-/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/recint/ruruint.h:
-/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/recint/recdefine.h:
-/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/recint/reclonglong.h:
-/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/recint/rushift.h:
-/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/recint/rconvert.h:
-/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/recint/rrint.h:
-/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/recint/rutools.h:
-/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/recint/rufiddling.h:
-/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/recint/ruadd.h:
-/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/recint/rucmp.h:
-/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/givaro/givcaster.h:
-/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/gmp++/gmp++_int_rand.inl:
-/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/givaro/givtimer.h:
-/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/givaro/givrandom.h:
-/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/givaro/udl.h:
+/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/givaro/modular.h:
+/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/givaro/modular-integral.h:
+/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/givaro/givinteger.h:
+/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/gmp++/gmp++.h:
+/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/gmp-6.3.0/include/gmpxx.h:
+/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/gmp-6.3.0/include/gmp.h:
+/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/gmp++/gmp++_int.h:
+/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/recint/ruconvert.h:
+/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/recint/rumanip.h:
+/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/recint/ruruint.h:
+/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/recint/recdefine.h:
+/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/recint/reclonglong.h:
+/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/recint/rushift.h:
+/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/recint/rconvert.h:
+/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/recint/rrint.h:
+/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/recint/rutools.h:
+/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/recint/rufiddling.h:
+/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/recint/ruadd.h:
+/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/recint/rucmp.h:
+/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/givaro/givcaster.h:
+/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/gmp++/gmp++_int_rand.inl:
+/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/givaro/givtimer.h:
+/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/givaro/givrandom.h:
+/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/givaro/udl.h:
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/time.h:
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_timeval64.h:
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_select.h:
-/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/givaro/givbasictype.h:
-/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/givaro/givinit.h:
-/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/givaro/giverror.h:
-/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/givaro/givranditer.h:
-/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/givaro/random-integer.h:
-/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/givaro/zring.h:
-/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/givaro/unparametric-operations.h:
-/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/givaro/ring-interface.h:
-/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/givaro/modular-general.h:
-/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/givaro/modular-general.inl:
-/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/givaro/modular-implem.h:
-/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/givaro/modular-mulprecomp.inl:
-/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/givaro/modular-integral.inl:
-/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/givaro/modular-floating.h:
-/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/givaro/modular-floating.inl:
-/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/givaro/modular-integer.h:
-/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/givaro/modular-integer.inl:
-/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/givaro/modular-inttype.h:
-/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/givaro/modular-inttype.inl:
-/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/givaro/modular-log16.h:
-/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/givaro/modular-log16.inl:
-/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/givaro/modular-ruint.h:
-/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/recint/ruint.h:
-/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/recint/rusub.h:
-/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/recint/rumul.h:
-/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/recint/rudiv.h:
-/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/recint/ruexp.h:
-/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/recint/rugcd.h:
-/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/recint/ruinvmod.h:
-/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/recint/ruaddmul.h:
-/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/recint/rurandom.h:
+/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/givaro/givbasictype.h:
+/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/givaro/givinit.h:
+/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/givaro/giverror.h:
+/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/givaro/givranditer.h:
+/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/givaro/random-integer.h:
+/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/givaro/zring.h:
+/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/givaro/unparametric-operations.h:
+/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/givaro/ring-interface.h:
+/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/givaro/modular-general.h:
+/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/givaro/modular-general.inl:
+/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/givaro/modular-implem.h:
+/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/givaro/modular-mulprecomp.inl:
+/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/givaro/modular-integral.inl:
+/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/givaro/modular-floating.h:
+/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/givaro/modular-floating.inl:
+/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/givaro/modular-integer.h:
+/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/givaro/modular-integer.inl:
+/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/givaro/modular-inttype.h:
+/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/givaro/modular-inttype.inl:
+/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/givaro/modular-log16.h:
+/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/givaro/modular-log16.inl:
+/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/givaro/modular-ruint.h:
+/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/recint/ruint.h:
+/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/recint/rusub.h:
+/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/recint/rumul.h:
+/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/recint/rudiv.h:
+/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/recint/ruexp.h:
+/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/recint/rugcd.h:
+/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/recint/ruinvmod.h:
+/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/recint/ruaddmul.h:
+/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/recint/rurandom.h:
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/random:
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__random/bernoulli_distribution.h:
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__random/uniform_real_distribution.h:
@@ -2260,55 +2260,55 @@ test-fft.o: test-fft.C ../linbox/linbox-config.h \
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__random/seed_seq.h:
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__random/student_t_distribution.h:
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__random/weibull_distribution.h:
-/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/recint/rudisplay.h:
+/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/recint/rudisplay.h:
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/iomanip:
-/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/recint/rint.h:
-/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/recint/radd.h:
-/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/recint/rsub.h:
-/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/recint/rmul.h:
-/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/recint/rdiv.h:
+/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/recint/rint.h:
+/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/recint/radd.h:
+/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/recint/rsub.h:
+/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/recint/rmul.h:
+/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/recint/rdiv.h:
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/cassert:
-/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/recint/rfiddling.h:
-/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/recint/rcmp.h:
-/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/recint/rrandom.h:
-/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/recint/rdisplay.h:
-/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/givaro/modular-ruint.inl:
-/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/givaro/modular-extended.h:
-/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/givaro/modular-extended.inl:
-/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/recint/recint.h:
-/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/recint/rmint.h:
-/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/recint/rmbrmint.h:
-/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/recint/rmdefine.h:
-/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/recint/rmbmodule.h:
-/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/recint/rmbreduc.h:
-/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/recint/rmbmul.h:
-/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/recint/rmmul.h:
-/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/recint/rmbinv.h:
-/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/recint/rmbexp.h:
-/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/recint/rmbaddmul.h:
-/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/recint/rmadd.h:
-/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/recint/rmneg.h:
-/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/recint/rmsub.h:
-/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/recint/rmdiv.h:
-/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/recint/rmcmp.h:
-/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/recint/rmrandom.h:
-/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/recint/rmgrmint.h:
-/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/recint/rmgreduc.h:
-/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/recint/rmextra.h:
-/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/recint/rmmanip.h:
-/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/recint/rmdisplay.h:
-/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/recint/rmconvert.h:
-/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/recint/rmintmg.h:
-/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/recint/rmgmodule.h:
-/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/recint/rmgmul.h:
-/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/recint/rmginv.h:
-/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/recint/rmgexp.h:
-/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/recint/rmgaddmul.h:
+/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/recint/rfiddling.h:
+/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/recint/rcmp.h:
+/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/recint/rrandom.h:
+/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/recint/rdisplay.h:
+/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/givaro/modular-ruint.inl:
+/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/givaro/modular-extended.h:
+/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/givaro/modular-extended.inl:
+/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/recint/recint.h:
+/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/recint/rmint.h:
+/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/recint/rmbrmint.h:
+/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/recint/rmdefine.h:
+/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/recint/rmbmodule.h:
+/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/recint/rmbreduc.h:
+/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/recint/rmbmul.h:
+/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/recint/rmmul.h:
+/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/recint/rmbinv.h:
+/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/recint/rmbexp.h:
+/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/recint/rmbaddmul.h:
+/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/recint/rmadd.h:
+/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/recint/rmneg.h:
+/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/recint/rmsub.h:
+/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/recint/rmdiv.h:
+/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/recint/rmcmp.h:
+/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/recint/rmrandom.h:
+/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/recint/rmgrmint.h:
+/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/recint/rmgreduc.h:
+/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/recint/rmextra.h:
+/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/recint/rmmanip.h:
+/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/recint/rmdisplay.h:
+/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/recint/rmconvert.h:
+/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/recint/rmintmg.h:
+/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/recint/rmgmodule.h:
+/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/recint/rmgmul.h:
+/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/recint/rmginv.h:
+/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/recint/rmgexp.h:
+/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/recint/rmgaddmul.h:
 ../linbox/algorithms/polynomial-matrix/fft-utils.h:
 ../linbox/algorithms/polynomial-matrix/fft-integral.inl:
 ../linbox/randiter/random-fftprime.h:
 ../linbox/integer.h:
-/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/givaro/givspyinteger.h:
+/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/givaro/givspyinteger.h:
 ../linbox/util/timer.h:
 ../linbox/util/commentator.h:
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/map:
@@ -2333,4 +2333,4 @@ test-fft.o: test-fft.C ../linbox/linbox-config.h \
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__filesystem/u8path.h:
 ../linbox/util/commentator.inl:
 ../linbox/util/args-parser.h:
-/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/fflas-ffpack-2.5.0/include/fflas-ffpack/utils/args-parser.h:
+/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/fflas-ffpack-2.5.0/include/fflas-ffpack/utils/args-parser.h:

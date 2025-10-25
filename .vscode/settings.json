@@ -1,0 +1,11 @@
+{
+    "files.associations": {
+        "charpoly.C": "cpp",
+        "graph-charpoly.C": "cpp",
+        "minpoly.C": "cpp",
+        "blassolve.C": "cpp",
+        "checksolve.C": "cpp",
+        "matrices.C": "cpp",
+        "echelon.C": "cpp"
+    }
+}

@@ -38,4 +38,4 @@ dlopen=''
 dlpreopen=''
 
 # Directory that this library needs to be installed in:
-libdir='/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/gmp-6.3.0/lib'
+libdir='/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/gmp-6.3.0/lib'
