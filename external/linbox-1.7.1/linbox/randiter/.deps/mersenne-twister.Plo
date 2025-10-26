@@ -1,10 +1,10 @@
 mersenne-twister.lo: mersenne-twister.C ../../linbox/linbox-config.h \
-  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/fflas-ffpack-2.5.0/include/fflas-ffpack/fflas-ffpack-config.h \
-  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/fflas-ffpack-2.5.0/include/fflas-ffpack/config.h \
-  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/fflas-ffpack-2.5.0/include/fflas-ffpack/fflas-ffpack-thresholds.h \
-  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/fflas-ffpack-2.5.0/include/fflas-ffpack/fflas-ffpack-default-thresholds.h \
-  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/givaro/givconfig.h \
-  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/givaro-config.h \
+  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/fflas-ffpack-2.5.0/include/fflas-ffpack/fflas-ffpack-config.h \
+  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/fflas-ffpack-2.5.0/include/fflas-ffpack/config.h \
+  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/fflas-ffpack-2.5.0/include/fflas-ffpack/fflas-ffpack-thresholds.h \
+  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/fflas-ffpack-2.5.0/include/fflas-ffpack/fflas-ffpack-default-thresholds.h \
+  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/givaro/givconfig.h \
+  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/givaro-config.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/stdint.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__config \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__config_site \
@@ -970,16 +970,16 @@ mersenne-twister.lo: mersenne-twister.C ../../linbox/linbox-config.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/sstream \
   ../../linbox/util/error.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/list \
-  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/givaro/givprint.h \
+  /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/givaro/givprint.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/set \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__tree
 ../../linbox/linbox-config.h:
-/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/fflas-ffpack-2.5.0/include/fflas-ffpack/fflas-ffpack-config.h:
-/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/fflas-ffpack-2.5.0/include/fflas-ffpack/config.h:
-/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/fflas-ffpack-2.5.0/include/fflas-ffpack/fflas-ffpack-thresholds.h:
-/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/fflas-ffpack-2.5.0/include/fflas-ffpack/fflas-ffpack-default-thresholds.h:
-/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/givaro/givconfig.h:
-/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/givaro-config.h:
+/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/fflas-ffpack-2.5.0/include/fflas-ffpack/fflas-ffpack-config.h:
+/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/fflas-ffpack-2.5.0/include/fflas-ffpack/config.h:
+/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/fflas-ffpack-2.5.0/include/fflas-ffpack/fflas-ffpack-thresholds.h:
+/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/fflas-ffpack-2.5.0/include/fflas-ffpack/fflas-ffpack-default-thresholds.h:
+/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/givaro/givconfig.h:
+/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/givaro-config.h:
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/stdint.h:
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__config:
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__config_site:
@@ -1946,6 +1946,6 @@ mersenne-twister.lo: mersenne-twister.C ../../linbox/linbox-config.h \
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/sstream:
 ../../linbox/util/error.h:
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/list:
-/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include/givaro/givprint.h:
+/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include/givaro/givprint.h:
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/set:
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__tree:

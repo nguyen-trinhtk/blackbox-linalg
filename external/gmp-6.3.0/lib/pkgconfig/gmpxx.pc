@@ -1,4 +1,4 @@
-prefix=/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/gmp-6.3.0
+prefix=/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/gmp-6.3.0
 exec_prefix=${prefix}
 includedir=${prefix}/include
 libdir=${exec_prefix}/lib

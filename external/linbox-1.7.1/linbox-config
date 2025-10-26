@@ -4,7 +4,7 @@
 # This file is part of LinBox (and probably stolen here and there)
 # see COPYING for licence
 
-prefix=/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/linbox-1.7.1
+prefix=/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/linbox-1.7.1
 exec_prefix=${prefix}
 includedir=${prefix}/include
 libdir=${exec_prefix}/lib
@@ -72,11 +72,11 @@ while test $# -gt 0; do
 	;;
 
     --cflags)
-	echo -I${includedir} -I/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/fflas-ffpack-2.5.0/include -I/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/OpenBLAS-0.3.30/include -std=gnu++11 -I/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/include       
+	echo -I${includedir} -I/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/fflas-ffpack-2.5.0/include -I/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/OpenBLAS-0.3.30/include -std=gnu++11 -I/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include       
 	;;
 
     --libs)
-	echo -I${libdir} -llinbox       -L/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/OpenBLAS-0.3.30/lib -lopenblas -L/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1/lib -lgivaro -lgmpxx -lgmp
+	echo -I${libdir} -llinbox       -L/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/OpenBLAS-0.3.30/lib -lopenblas -L/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/lib -lgivaro -lgmpxx -lgmp
 	;;
 
     *)

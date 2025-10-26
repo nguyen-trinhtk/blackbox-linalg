@@ -6,7 +6,7 @@
 # see the COPYRIGHT file for more details.
 
 
-prefix=/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/automation/givaro-4.2.1
+prefix=/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1
 exec_prefix=${prefix}
 includedir=${prefix}/include
 libdir=${exec_prefix}/lib

@@ -1,16 +1,17 @@
 
 ---------------------------------------------------------------------
-Sat Oct 25 09:28:47 2025
+Sun Oct 26 15:42:53 2025
 
 Threshold between CharPoly algorithms Danilevskii <-> LUKrylov (using ModularBalanced<double> modulo 4194301)
 
 Charpoly:  n                   Danilevskii                        LUKrylov
                     seconds            Gfops          seconds            Gfops
-        32       7.2041e-05           1.2281      6.71887e-05          1.31679
-        32      9.28812e-05         0.952546      7.06391e-05          1.25247
-        16      1.46503e-05         0.754876      2.65083e-05         0.417197
-        24      3.69477e-05          1.01021       3.9516e-05          0.94455
-        28      4.71539e-05          1.25696      5.77235e-05           1.0268
-        30       4.7255e-05          1.54269      5.22766e-05          1.39451
+        32      8.52532e-05          1.03777      0.000118182         0.748623
+        64      0.000674294          1.04967      0.000242743          2.91579
+        64      0.000423075          1.67296      0.000219872          3.21909
+        48      0.000242283          1.23244      0.000135041          2.21117
+        40       0.00011558          1.49507      7.87964e-05          2.19299
+        36       8.3354e-05          1.51128      7.33542e-05           1.7173
+        34      7.29923e-05          1.45386      6.18248e-05          1.71648
 
-defined __FFLASFFPACK_CHARPOLY_Danilevskii_LUKrylov_THRESHOLD to 32
+defined __FFLASFFPACK_CHARPOLY_Danilevskii_LUKrylov_THRESHOLD to 34
