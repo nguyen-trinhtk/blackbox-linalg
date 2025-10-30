@@ -1,16 +1,6 @@
-Excellent — now that you have the working `batch-run` script, `gen_precond.cpp`, `solve.cpp`, and a LinBox-compatible `Makefile`, we can produce two versions of your documentation:
-
-1. 🧱 **Detailed version** (for `src/runs/README.md` or inside the subproject folder) — a full technical guide explaining the architecture, directory structure, and code interactions.
-2. ⚡ **Brief version** (for your project’s main `README.md`) — a short user-facing overview focusing on quick usage and workflow.
-
----
-
-## 🧱 Detailed README (`src/runs/README.md`)
-
-````markdown
 # Wiedemann Batch Solver & Analyzer
 
-This tool automates matrix generation, preconditioning, algorithm execution, and result analysis for Wiedemann-based solvers.
+This is the source repo of the Wiedemann batch solver, mainly supporting probabilistic analysis of multiple black-box linear algebra algorithms. This tool automates matrix generation, preconditioning, algorithm execution, and result analysis for Wiedemann-based solvers.
 
 It consists of:
 - A master Bash script: **`batch-run`**
@@ -40,7 +30,7 @@ batch-run -v {varying} -r {start-stop} -t {mattype} -a {algorithm} -p {precond} 
 
 | Flag | Meaning                   | Default                    |
 | ---- | ------------------------- | -------------------------- |
-| `-d` | Directory for run results | `$(projectroot)/src/runs`  |
+| `-d` | Directory for run results | `$(ROOT)/src/runs`  |
 | `-n` | Test name                 | Auto-generated description |
 
 If `-n` is not provided, a default name is generated automatically:
@@ -204,9 +194,8 @@ Dependencies must exist under `$(ROOT)/external/`:
 ```
 
 Produces:
-
 ```
-src/runs/241030_153422/
+src/runs/251030_153422/
 ├─ matrix/
 ├─ precond/
 ├─ precond_matrix/
@@ -217,11 +206,6 @@ src/runs/241030_153422/
 ---
 
 ## 5. Notes
-
 * Both `gen_precond` and `solve` are linked against LinBox, Givaro, and GMP.
 * You can override the base run directory with `-d`.
 * Analyzer is optional but recommended for visualization.
-
-````
-
----
