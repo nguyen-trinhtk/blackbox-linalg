@@ -6,6 +6,7 @@
         "blassolve.C": "cpp",
         "checksolve.C": "cpp",
         "matrices.C": "cpp",
-        "echelon.C": "cpp"
+        "echelon.C": "cpp",
+        "solve.C": "cpp"
     }
 }

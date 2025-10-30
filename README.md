@@ -25,7 +25,7 @@ To support this work, I also include a solve and analysis tool designed to evalu
 ###### LinBox
 This tool relies on LinBox 1.7.1 (lastest version), which depends on Givaro (requires GMP) and FFLAS-FFPACK (requires OpenBLAS/ATLAS). All those third-party dependencies are placed in `external`. 
 
-For one-step installation, run the `install_linbox.sh` in `external`. Alternatively, a detailed step-by-step installation instructions is further specified in `docs/installation_guides.md`.
+For one-step installation, run the `install-fixed.sh` in `external`. Alternatively, a detailed step-by-step installation instructions is further specified in `docs/installation_guides.md`.
 
 ##### Python libraries
 All Python dependencies have been specified in `requirements.txt`. Run `pip install requirements.txt` should install prerequisites for the tool.
