@@ -30,5 +30,22 @@ For one-step installation, run the `install-fixed.sh` in `external`. Alternative
 ##### Python libraries
 All Python dependencies have been specified in `requirements.txt`. Run `pip install requirements.txt` should install prerequisites for the tool.
 
+
+###### 2. Using the tool
+Please navigate to `src/` for all the following executions
+```bash
+# Build executables
+make
+
+# Run a batch experiment
+./batch-run -v q -r 2-5 -t dense -a wiedemann -p diagonal -f 100
+````
+
+This:
+
+1. Generates matrices and preconditioners via `gen_precond`.
+2. Solves each with the chosen algorithm using `solve`.
+3. Stores results and plots in `src/runs/<timestamp>/`.
+---
 ### Notes
 Automated testing, CI workflows, and containerization (Docker) are currently being implemented. Since this research primarily focuses on theoretical linear algebra rather than software implementation, these tools are not strictly required. However, running the solver with C++ LinBox has significantly reduced overhead compared to using Sage (via CLI or Jupyter Notebook) and has resulted in a more organized codebase.

@@ -90,7 +90,7 @@ int lcm_wiedemann_trial(const std::string &matrix_file, int q, int max_iter = 10
     return -1; // failed
 }
 
-double run_lcm_wiedemann_experiment(const std::string &matrix_file, int q, int trials) {
+double run_lcm_wiedemann(const std::string &matrix_file, int q, int trials) {
     int total_iters = 0;
     int success_count = 0;
     int fail_count = 0;

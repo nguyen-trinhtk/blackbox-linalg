@@ -23,7 +23,7 @@ batch-run -v {varying} -r {start-stop} -t {mattype} -a {algorithm type} -p {prec
 
 ### Optional Flags
 
-* `-d` : Directory to execute in (default: current working directory).
+* `-d` : Directory to execute in (default: (projectroot)/src/runs).
 * `-n` : Name of the test. If not provided, a default name is generated:
 
   ```
@@ -52,7 +52,7 @@ For each run:
 
 ### 2. Preconditioning
 
-Inside the timestamped directory, create three child directories:
+Inside the timestamped directory, create three child directories (bash will make them)
 
 ```
 matrix/          # Original matrices A
@@ -62,8 +62,9 @@ precond_matrix/  # Preconditioned matrices D*A
 pass the list of q and n into the next c++ program. even if it's 1 element (fixed), still pass the list
 also pass the timestamp directory down to the next c++ pg
 
-Remember to include ./solver/core/all.h
+
 Write C++ code, name `gen_precond.cpp` that takes (list_of_q, list_of_n, directory): 
+Remember to include ./solver/core/all.h
 For each q:
 For each n:
 1. Generate the matrix using and store it in `dir/matrix/` as: q_nxn_{mattype}.sms. This can be done by calling mat_gen(n, q, {mattype}, 'dir/matrix')
@@ -91,10 +92,10 @@ For each file in `dir/precond_matrix/` with filename: q_nxn_{whatevertherestis}
 
 ### 4. Analyze
 
-Use the plotting script:
+In the bash script, run
 
 ```
-python3 plot.py path1.csv[,path2.csv,...] x y [label1,label2,...]
+python3 (project_root)/analyzer/plot.py path1.csv[,path2.csv,...] x y [label1,label2,...]
 ```
 
 * `x` : the varying parameter (`q` or `n`)
