@@ -1,5 +1,17 @@
 ### Fall W5: October 23, 2025
 Done: 
+- Fixing precond auto
+- Lemma 4.1
+
+To-do:
+- Lemma 4.1, Theorem 4.2 (step by step, breakdown)
+- Ask Omesh
+- Cauchy-Binet
+- Schwartz-Zippel
+
+
+### Fall W5: October 23, 2025
+Done: 
 - Examples for DET problem
 - Explore properties of PreConCyc (and why use)
 - Probability of non-derogatory
