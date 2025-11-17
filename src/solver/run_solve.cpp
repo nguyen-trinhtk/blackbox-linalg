@@ -73,7 +73,7 @@ int main(int argc, char** argv) {
             // assumes function: long long wiedemann(const char* matrix_file, int q)
             res = run_wiedemann(fullpath.c_str(), q);
         } else if (alg_type == "lcm_wiedemann") {
-            res = run_lcm_wiedemann(fullpath.c_str(), q);
+            std::cout << "LCM not currently usable..." << "\n";
         } else {
             std::cerr << "Unknown algorithm type: " << alg_type << "\n";
             ok = false;

@@ -1,4 +1,12 @@
-### Fall W5: October 23, 2025
+### Fall W7: October 23, 2025
+Done: 
+- Theory 4.2
+
+To-do:
+- Batch analyze diagonal scaling preconditioner
+- Berlekamp-Massey on 2n-1 instead of n?
+
+### Fall W6: October 23, 2025
 Done: 
 - Fixing precond auto
 - Lemma 4.1
