@@ -6,16 +6,14 @@ solving large sparse linear systems over a finite
 field. Wiedemann’s method (1986) probabilistically
 computes the minimal polynomial over finite fields
 using the Berlekamp–Massey (BM) algorithm to find
-the recurrence of Krylov sequences.
-Eberly (2003) proposed an early termination
-criterion for BM: For matrix size n and field order q , if
-a recurrence holds for c * log_q(n) consecutive terms
-without change, the algorithm may stop early. This
-can significantly reduce runtime, but may fail.
+the recurrence of Krylov sequences. 
+
+
+Eberly (2003) proposed an early termination criterion for BM: For matrix size n and field order q , if a recurrence holds for c * log_q(n) consecutive terms without change, the algorithm may stop early. This can significantly reduce runtime, but may fail. 
+
+
 This project studies the empirical success rate of
-early-terminated BM across matrix types, sizes, and
-field orders. For c = 3 , results show >98% success
-across test cases. Diagonal and sparse matrices
+early-terminated BM across matrix types, sizes, and field orders. For c = 3 , results show >98% success across test cases. Diagonal and sparse matrices
 terminate the earliest, while Toeplitz, Jordan, and
 companion matrices typically require full BM.
 Thus, early-terminated BM can be combined with
@@ -25,3 +23,4 @@ combination strategies to ensure fast and precise
 solutions in large, sparse linear system
 
 ### Poster
+<img width="580" height="780" alt="Vertical" src="https://github.com/user-attachments/assets/601ffdda-3bdb-4beb-b836-13f8b1e5dc14" />
