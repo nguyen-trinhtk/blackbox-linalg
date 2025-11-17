@@ -35,12 +35,8 @@ All Python dependencies have been specified in `requirements.txt`. Run `pip inst
 Please find `src/README.md` for more details about the tool. Below is an example usage: 
 
 ```bash
-# Build C/C++
- executables
-make
-
 # Run a batch experiment
-./batch-run -v q -r 2-5 -t dense -a wiedemann -p diagonal -f 100
+./batch-run -v q -r 2-5 -t dense -a wiedemann -p diagonal -f 97
 ````
 
 This:
