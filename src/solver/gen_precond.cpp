@@ -6,7 +6,6 @@
 #include <filesystem>
 #include <cstdlib>
 
-// user requested includes
 #include "core/all.h"
 
 namespace fs = std::filesystem;

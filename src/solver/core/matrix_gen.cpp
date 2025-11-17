@@ -166,8 +166,8 @@ static int gen_toeplitz(int n, int q, FILE* f, va_list args) {
     int* first_col = va_arg(args, int*);
 
     if (!first_row || !first_col) {
-        first_row = malloc(n * sizeof(int));
-        first_col = malloc(n * sizeof(int));
+        first_row = (int*)malloc(n * sizeof(int));
+        first_col = (int*)malloc(n * sizeof(int));
         for (int i = 0; i < n; i++) {
             first_row[i] = rand() % q;
             first_col[i] = (i == 0) ? first_row[0] : rand() % q;

@@ -22,7 +22,7 @@ EOF
 }
 
 # defaults
-BASE_DIR="$(pwd)/src/runs"
+BASE_DIR="$(pwd)/runs"
 TEST_NAME=""
 VARY=""
 RANGE=""
@@ -99,7 +99,7 @@ if [[ -z "$TEST_NAME" ]]; then
   if [[ "$VARY" == "q" ]]; then
     WHAT="GF(q)"
   else
-    WHAT="${N_LIST}x${N_LIST}"
+    WHAT="${STOP}x${STOP}"
   fi
   TEST_NAME="${ALG} on varying ${VARY} over ${WHAT} ${MATTYPE} matrices using ${PRECOND} preconditioners"
 fi
@@ -144,15 +144,23 @@ echo "Running gen_precond with q_list=${Q_LIST} n_list=${N_LIST} dir=${RUN_DIR} 
 
 # run solve
 echo "Running solve on ${RUN_DIR} with algorithm ${ALG}"
-"${BIN_DIR}/solve" "${RUN_DIR}" "${ALG}"
+"${BIN_DIR}/run_solve" "${RUN_DIR}" "${ALG}"
 
-# call analyzer python script (project_root)/analyzer/plot.py
-ANALYZER="$(pwd)/analyzer/plot.py"
+# Determine x-axis based on varying parameter
+if [[ "$VARY" == "n" ]]; then
+  X_AXIS="n"
+else
+  X_AXIS="q"
+fi
+
+# call analyzer python script
+ANALYZER="$(pwd)/src/analyzer/plot.py"
 if [[ -f "${ANALYZER}" ]]; then
-  echo "Running analyzer..."
-  python3 "${ANALYZER}" "${RUN_DIR}/results.csv" "${VARY}" "res" "${TEST_NAME}"
+  echo "Running analyzer on ${RUN_DIR}/results.csv..."
+  python3 "${ANALYZER}" "${RUN_DIR}/results.csv" "${X_AXIS}" "res" "${TEST_NAME}"
 else
   echo "Analyzer script not found at ${ANALYZER}; skipping analysis. Expected: ${ANALYZER}"
 fi
+
 
 echo "Done. Results and files in ${RUN_DIR}"

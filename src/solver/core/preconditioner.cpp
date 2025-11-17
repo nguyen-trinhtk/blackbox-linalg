@@ -14,7 +14,7 @@ static int read_sms(const char* filename, int* n, int** mat) {
     rewind(f);
 
     *n = lines;
-    *mat = malloc(sizeof(int) * (*n) * (*n));
+    *mat = (int*)malloc(sizeof(int) * (*n) * (*n));
     if (!(*mat)) { fclose(f); return -1; }
 
     for (int i = 0; i < *n; i++) {
@@ -67,7 +67,7 @@ int multiply_precond(const char* precond_file, const char* matrix_file, int q, c
     if (n1 != n2) { free(P); free(A); return -2; }
 
     int n = n1;
-    int* C = calloc(n * n, sizeof(int));
+    int* C = (int*)calloc(n * n, sizeof(int));
     if (!C) { free(P); free(A); return -1; }
 
     mult_mod_q(n, P, A, C, q);
