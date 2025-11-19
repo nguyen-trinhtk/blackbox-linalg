@@ -1,166 +1,89 @@
 #!/usr/bin/env bash
-set -euo pipefail
+ATTEMPTS=10
+parse_args() {
+    DEST_DIR=""
+    EXP_NAME=""
 
-usage() {
-  cat <<EOF
-Usage:
-  batch-run -v {q|n} -r {start-stop} -t {mattype} -a {wiedemann|lcm_wiedemann} -p {precond} -f {fixed} [-d directory] [-n name]
+    while getopts "v:r:t:a:p:f:d:n:" opt; do
+        case "$opt" in
+            v) IND_VAR="$OPTARG" ;;        # q or n
+            r) RANGE="$OPTARG" ;;          # e.g. 2-5
+            t) MAT_TYPE="$OPTARG" ;;
+            a) ALGO_TYPE="$OPTARG" ;;
+            p) PRECOND_TYPE="$OPTARG" ;;
+            f) FIXED_VAR="$OPTARG" ;;
+            d) DEST_DIR="$OPTARG" ;;       # optional
+            n) EXP_NAME="$OPTARG" ;;       # optional
+            *)
+                echo "Invalid option." >&2
+                exit 1
+                ;;
+        esac
+    done
 
-Required:
-  -v  parameter to vary: q or n
-  -r  range for the varying parameter, inclusive, e.g. 1-5
-  -t  mattype: dense|sparse|diagonal|toeplitz|companion|jordan
-  -a  algorithm type: wiedemann|lcm_wiedemann
-  -p  preconditioner type: e.g. diagonal
-  -f  fixed value for non-varying parameter
+    if [[ -z "$IND_VAR" || -z "$RANGE" || -z "$MAT_TYPE" || -z "$ALGO_TYPE" || -z "$PRECOND_TYPE" || -z "$FIXED_VAR" ]]; then
+        echo "Error: missing required arguments." >&2
+        echo "Usage: $0 -v q|n -r start-stop -t type -a algo -p precond -f fixed [-d dest] [-n name]" >&2
+        exit 1
+    fi
 
-Optional:
-  -d  base directory to run in (default: projectroot/src/runs)
-  -n  test name (default auto-generated)
-EOF
-  exit 1
+    IFS="-" read -r START STOP <<< "$RANGE"
+
+    if [[ -z "$START" || -z "$STOP" ]]; then
+        echo "Invalid range format. Expected start-stop." >&2
+        exit 1
+    fi
+
+    timestamp="$(date +"%Y-%m-%d_%H:%M:%S")"
+
+    if [[ -n "$DEST_DIR" ]]; then
+        RUN_DIR="${DEST_DIR%/}/$timestamp"
+    else
+        RUN_DIR="runs/$timestamp"
+    fi
+    mkdir -p "$RUN_DIR"
 }
 
-# defaults
-BASE_DIR="$(pwd)/runs"
-TEST_NAME=""
-VARY=""
-RANGE=""
-MATTYPE=""
-ALG=""
-PRECOND=""
-FIXED=""
+# Requires primesieve
+generate_var_list() {
+    Q_LIST=()
+    N_LIST=()
 
-while getopts ":v:r:t:a:p:f:d:n:h" opt; do
-  case ${opt} in
-    v) VARY=${OPTARG} ;;
-    r) RANGE=${OPTARG} ;;
-    t) MATTYPE=${OPTARG} ;;
-    a) ALG=${OPTARG} ;;
-    p) PRECOND=${OPTARG} ;;
-    f) FIXED=${OPTARG} ;;
-    d) BASE_DIR=${OPTARG} ;;
-    n) TEST_NAME=${OPTARG} ;;
-    h|*) usage ;;
-  esac
+    if [[ "$IND_VAR" == "n" ]]; then
+        # primality handling?
+        N_LIST=($(seq "$START" "$STOP"))
+        Q_LIST=($FIXED_VAR)
+    else
+        N_LIST=($FIXED_VAR)
+        primes="$(primesieve "$START" "$STOP" --print)"
+        while IFS= read -r p; do
+            Q_LIST+=("$p")
+        done <<< "$primes"
+    fi
+
+    N_FILE="$RUN_DIR/n_list.txt"
+    Q_FILE="$RUN_DIR/q_list.txt"
+
+    printf "%s\n" "${N_LIST[@]}" > "$N_FILE"
+    printf "%s\n" "${Q_LIST[@]}" > "$Q_FILE"
+}
+
+print_check() {
+    echo "Fact check"
+    echo "$START"
+    echo "$STOP"
+    echo "${Q_LIST[@]}"
+    echo "${N_LIST[@]}"
+}
+
+parse_args "$@"
+generate_var_list
+# print_check
+make
+for (( TRIAL=1; TRIAL < ( ATTEMPTS + 1 ); TRIAL++ )); do
+    mkdir -p "$RUN_DIR/trial-$TRIAL"
+    mkdir -p "$RUN_DIR/trial-$TRIAL/matrix"
+    mkdir -p "$RUN_DIR/trial-$TRIAL/precond"
+    ./build/solver/generate_matrix "$MAT_TYPE" "$N_FILE" "$Q_FILE" "$RUN_DIR/trial-$TRIAL/matrix"
+    ./build/solver/generate_matrix "$MAT_TYPE" "$N_FILE" "$Q_FILE" "$RUN_DIR/trial-$TRIAL/precond"
 done
-
-# basic validation
-if [[ -z "$VARY" || -z "$RANGE" || -z "$MATTYPE" || -z "$ALG" || -z "$PRECOND" || -z "$FIXED" ]]; then
-  echo "Missing required parameter."
-  usage
-fi
-
-if [[ "$VARY" != "q" && "$VARY" != "n" ]]; then
-  echo "Invalid vary parameter: $VARY"
-  usage
-fi
-
-# parse range start-stop
-if [[ "$RANGE" =~ ^([0-9]+)-([0-9]+)$ ]]; then
-  START=${BASH_REMATCH[1]}
-  STOP=${BASH_REMATCH[2]}
-else
-  echo "Range must be of form start-stop (integers)."
-  usage
-fi
-
-if (( START > STOP )); then
-  echo "Range start must be <= stop."
-  exit 1
-fi
-
-# produce list for varying parameter
-VARY_LIST=()
-for ((i=START;i<=STOP;i++)); do
-  VARY_LIST+=("$i")
-done
-
-# produce comma-separated lists for q and n (even if single)
-if [[ "$VARY" == "q" ]]; then
-  Q_LIST=$(IFS=,; echo "${VARY_LIST[*]}")
-  N_LIST="$FIXED"
-else
-  N_LIST=$(IFS=,; echo "${VARY_LIST[*]}")
-  Q_LIST="$FIXED"
-fi
-
-# timestamped directory
-TIMESTAMP=$(date +%y%m%d_%H%M%S)
-RUN_DIR="${BASE_DIR}/${TIMESTAMP}"
-MATRIX_DIR="${RUN_DIR}/matrix"
-PRECOND_DIR="${RUN_DIR}/precond"
-PRECOND_MATRIX_DIR="${RUN_DIR}/precond_matrix"
-
-mkdir -p "${MATRIX_DIR}" "${PRECOND_DIR}" "${PRECOND_MATRIX_DIR}"
-
-# test name default
-if [[ -z "$TEST_NAME" ]]; then
-  if [[ "$VARY" == "q" ]]; then
-    WHAT="GF(q)"
-  else
-    WHAT="${STOP}x${STOP}"
-  fi
-  TEST_NAME="${ALG} on varying ${VARY} over ${WHAT} ${MATTYPE} matrices using ${PRECOND} preconditioners"
-fi
-
-# metadata
-METADATA="${RUN_DIR}/metadata.txt"
-cat > "${METADATA}" <<EOF
-datetime: ${TIMESTAMP}
-fixed: ${FIXED}
-varied: ${VARY}
-start: ${START}
-stop: ${STOP}
-matrix_type: ${MATTYPE}
-algorithm_type: ${ALG}
-left_precond_type: ${PRECOND}
-right_precond_type:
-name: ${TEST_NAME}
-q_list: ${Q_LIST}
-n_list: ${N_LIST}
-EOF
-
-echo "Created run directory: ${RUN_DIR}"
-echo "Metadata written to ${METADATA}"
-
-# Build binaries if not present (optional)
-# You can comment these out if you prefer manual compilation.
-if ! command -v g++ >/dev/null 2>&1; then
-  echo "g++ not found; please install a compiler."
-  exit 1
-fi
-
-BIN_DIR="$(pwd)/bin"
-mkdir -p "${BIN_DIR}"
-
-echo "Building gen_precond and solve using Makefile..."
-make -C "$(pwd)"
-mv gen_precond run_solve "${BIN_DIR}/"
-
-# run gen_precond
-echo "Running gen_precond with q_list=${Q_LIST} n_list=${N_LIST} dir=${RUN_DIR} mattype=${MATTYPE} pctype=${PRECOND}"
-"${BIN_DIR}/gen_precond" "${Q_LIST}" "${N_LIST}" "${RUN_DIR}" "${MATTYPE}" "${PRECOND}"
-
-# run solve
-echo "Running solve on ${RUN_DIR} with algorithm ${ALG}"
-"${BIN_DIR}/run_solve" "${RUN_DIR}" "${ALG}"
-
-# Determine x-axis based on varying parameter
-if [[ "$VARY" == "n" ]]; then
-  X_AXIS="n"
-else
-  X_AXIS="q"
-fi
-
-# call analyzer python script
-ANALYZER="$(pwd)/src/analyzer/plot.py"
-if [[ -f "${ANALYZER}" ]]; then
-  echo "Running analyzer on ${RUN_DIR}/results.csv..."
-  python3 "${ANALYZER}" "${RUN_DIR}/results.csv" "${X_AXIS}" "res" "${TEST_NAME}"
-else
-  echo "Analyzer script not found at ${ANALYZER}; skipping analysis. Expected: ${ANALYZER}"
-fi
-
-
-echo "Done. Results and files in ${RUN_DIR}"
