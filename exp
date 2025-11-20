@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+./batch-run -v n -r 10-10 -t dense -a wiedemann -p diagonal -f 31
+printf '%*s\n' "$(tput cols)" '' | tr ' ' '='
+./batch-run -v n -r 50-50 -t dense -a wiedemann -p diagonal -f 31
+printf '%*s\n' "$(tput cols)" '' | tr ' ' '='
+./batch-run -v n -r 100-100 -t dense -a wiedemann -p diagonal -f 31
+printf '%*s\n' "$(tput cols)" '' | tr ' ' '='
+
+
+# Q Varying
+# ./batch-run -v q -r 1-100 -t dense -a wiedemann -p diagonal -f 100
+# printf '%*s\n' "$(tput cols)" '' | tr ' ' '='

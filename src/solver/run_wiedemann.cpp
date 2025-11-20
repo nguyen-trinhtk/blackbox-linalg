@@ -53,12 +53,13 @@ int main(int argc, char **argv) {
     }
 
     int success = 0;
-    int trials = 10;  // adjustable
+    int trials = 100;  // adjustable
     for (int i = 0; i < trials; i++) {
         std::stringstream trial_input(matrix_data);  // fresh stream per trial
         success += solve(q, trial_input);
     }
 
     std::cout << "Successes: " << success << "/" << trials << std::endl;
+    std::cout << std::endl;
     return success;
 }

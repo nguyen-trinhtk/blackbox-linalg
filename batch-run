@@ -129,9 +129,9 @@ for (( TRIAL=1; TRIAL < ( ATTEMPTS + 1 ); TRIAL++ )); do
     ./build/solver/generate_matrix "$PRECOND_TYPE" "$N_FILE" "$Q_FILE" "$RUN_DIR/trial-$TRIAL/precond"
     ./build/solver/apply_precond "$N_FILE" "$Q_FILE" "$RUN_DIR/trial-$TRIAL/matrix" "$RUN_DIR/trial-$TRIAL/precond" "$RUN_DIR/trial-$TRIAL/fin"
     python3 src/utils/convert.py "$RUN_DIR/trial-$TRIAL"
-    echo "ORIGINALLLLLLLL"
+    echo "ORIGINAL"
     solve_original
-    echo "PRECONDDDDDDDDD"
+    echo "PRECOND"
     solve_precond
 done
 
