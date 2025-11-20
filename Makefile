@@ -1,11 +1,19 @@
 CXX = g++
-CXXFLAGS = -Wall -O2
-SRC = src/solver/generate_matrix.cpp
-TARGET = build/solver/generate_matrix
+CXXFLAGS = -Wall
 
-all: $(TARGET)
+GEN_SRC = src/solver/generate_matrix.cpp src/utils/utils.cpp
+GEN_TARGET = build/solver/generate_matrix
 
-$(TARGET): $(SRC)
+PRECOND_SRC = src/solver/apply_precond.cpp src/utils/utils.cpp
+PRECOND_TARGET = build/solver/apply_precond
+
+all: $(GEN_TARGET) $(PRECOND_TARGET)
+
+$(GEN_TARGET): $(GEN_SRC)
+	mkdir -p $(dir $@)
+	$(CXX) $(CXXFLAGS) -o $@ $^
+
+$(PRECOND_TARGET): $(PRECOND_SRC)
 	mkdir -p $(dir $@)
 	$(CXX) $(CXXFLAGS) -o $@ $^
 

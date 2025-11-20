@@ -70,6 +70,8 @@
         "unordered_set": "cpp",
         "variant": "cpp",
         "vector": "cpp",
-        "algorithm": "cpp"
+        "algorithm": "cpp",
+        "GaloisFields.C": "cpp",
+        "dot-product.C": "cpp"
     }
 }

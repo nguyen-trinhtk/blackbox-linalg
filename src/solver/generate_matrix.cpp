@@ -1,53 +1,94 @@
 #include <iostream>
 #include <list>
 #include <string>
-// #include "utils.h"
-
-#include <iostream>
-#include <list>
-#include <string>
 #include <fstream>
+#include <random>
+#include "../utils/utils.h"
 
-std::list<int> file_to_list(const std::string& file_name) {
-    std::list<int> intList;
-    std::ifstream inputFile(file_name);
-    if (!inputFile.is_open()) {
-        std::cerr << "Error opening file: " << file_name << std::endl;
-        return std::list<int>();
-    }
-
-    std::string line;
-    while (std::getline(inputFile, line)) {
-        if (!line.empty()) {
-            intList.push_back(std::stoi(line));
-        }
-    }
-
-    return intList;
+// generate_matrix.cpp
+int random_field_element(int q) {
+    static std::random_device rd;
+    static std::mt19937 gen(rd());
+    std::uniform_int_distribution<> distrib(0, q);
+    return distrib(gen);
 }
 
-void print_list(const std::list<int>& lst) {
-    for (const int& v : lst) {
-        std::cout << v << " ";
-    }
-    std::cout << "\n";
-}
-
-
-void generate_matrix(int n, int q, std::string dest_dir) {
-    std::string file_name = std::to_string(n) + "x" + std::to_string(n) + "-" + "GF" + std::to_string(q) + ".sms";
-    std::string save_path = dest_dir + "/" + file_name;
-    std::ofstream outputFile(save_path);
+void random_dense(int n, int q, std::string dest_file) {
+    std::ofstream outputFile(dest_file);
     if (outputFile.is_open()) {
-        outputFile << file_name << std::endl;
+        std::string matrix_string = std::to_string(n) + " " + std::to_string(n) + "\n";
+        for (int r=0; r < n; r++) {
+            for (int c=0; c < n; c++) {
+                matrix_string += std::to_string(random_field_element(q)) + " ";
+            }
+            matrix_string += "\n";
+        }
+        outputFile << matrix_string;
         outputFile.close();
     } else {
-        std::cerr << "Error: Unable to open or create matrix file." << std::endl;
+        std::cerr << "Error: Unable to open or create matrix file." << "\n";
     }
 }
 
+void random_diagonal(int n, int q, std::string dest_file) {
+    std::ofstream outputFile(dest_file);
+    if (outputFile.is_open()) {
+        std::string matrix_string = std::to_string(n) + " " + std::to_string(n) + "\n";
+        for (int r=0; r < n; r++) {
+            for (int c=0; c < r; c++) {
+                matrix_string +=  "0 ";
+            }
+            matrix_string += std::to_string(random_field_element(q)) + " ";
+            for (int c=r+1; c < n; c++) {
+                matrix_string +=  "0 ";
+            }
+            matrix_string += "\n";
+        }
+        outputFile << matrix_string;
+        outputFile.close();
+    } else {
+        std::cerr << "Error: Unable to open or create matrix file." << "\n";
+    }
+}
 
-// main.cpp
+void identity(int n, int q, std::string dest_file) {
+    std::ofstream outputFile(dest_file);
+    if (outputFile.is_open()) {
+        std::string matrix_string = std::to_string(n) + " " + std::to_string(n) + "\n";
+        for (int r=0; r < n; r++) {
+            for (int c=0; c < r; c++) {
+                matrix_string +=  "0 ";
+            }
+            matrix_string += "1 ";
+            for (int c=r+1; c < n; c++) {
+                matrix_string +=  "0 ";
+            }
+            matrix_string += "\n";
+        }
+        outputFile << matrix_string;
+        outputFile.close();
+    } else {
+        std::cerr << "Error: Unable to open or create matrix file." << "\n";
+    }
+}
+
+void generate_matrix(std::string matrix_type, int n, int q, std::string dest_dir) {
+    std::string file_name = std::to_string(n) + "x" + std::to_string(n) + "-" + "GF" + std::to_string(q) + ".txt";
+    std::string dest_file = dest_dir + "/" + file_name;
+    if (matrix_type=="dense") {
+        random_dense(n, q, dest_file);
+    }
+    else if (matrix_type=="diagonal") {
+        random_diagonal(n, q, dest_file);
+    }
+    else if (matrix_type=="identity") {
+        identity(n, q, dest_file);
+    }
+    else {
+        std::cerr << "Error: Unsupported matrix type." << "\n";
+    }
+}
+
 int main(int argc, char* argv[]) {
     if (argc != 5) {
         std::cerr << "Incorrect number of arguments.\n";
@@ -58,13 +99,11 @@ int main(int argc, char* argv[]) {
     std::list<int> n_list = file_to_list(argv[2]);
     std::list<int> q_list = file_to_list(argv[3]);
     std::string dest_dir = argv[4];
-    for (int n : n_list) {
-        for (int q : q_list) {
-            generate_matrix(n, q, dest_dir);
+    for (std::list<int>::const_iterator n_it = n_list.begin(); n_it != n_list.end(); ++n_it) {
+        for (std::list<int>::const_iterator q_it = q_list.begin(); q_it != q_list.end(); ++q_it) {
+            generate_matrix(matrix_type, *n_it, *q_it, dest_dir);
         }
     }
-    // print_list(n_list);
-    // print_list(q_list);
     std::cout << dest_dir << "\n";
     return 0;
 }

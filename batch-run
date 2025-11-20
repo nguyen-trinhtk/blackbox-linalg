@@ -84,6 +84,8 @@ for (( TRIAL=1; TRIAL < ( ATTEMPTS + 1 ); TRIAL++ )); do
     mkdir -p "$RUN_DIR/trial-$TRIAL"
     mkdir -p "$RUN_DIR/trial-$TRIAL/matrix"
     mkdir -p "$RUN_DIR/trial-$TRIAL/precond"
+    mkdir -p "$RUN_DIR/trial-$TRIAL/fin"
     ./build/solver/generate_matrix "$MAT_TYPE" "$N_FILE" "$Q_FILE" "$RUN_DIR/trial-$TRIAL/matrix"
-    ./build/solver/generate_matrix "$MAT_TYPE" "$N_FILE" "$Q_FILE" "$RUN_DIR/trial-$TRIAL/precond"
+    ./build/solver/generate_matrix "$PRECOND_TYPE" "$N_FILE" "$Q_FILE" "$RUN_DIR/trial-$TRIAL/precond"
+    ./build/solver/apply_precond "$N_FILE" "$Q_FILE" "$RUN_DIR/trial-$TRIAL/matrix" "$RUN_DIR/trial-$TRIAL/precond" "$RUN_DIR/trial-$TRIAL/fin"
 done

@@ -1,14 +1,13 @@
+#include "utils.h"
 #include <iostream>
-#include <list>
-#include <string>
 #include <fstream>
 
 std::list<int> file_to_list(const std::string& file_name) {
     std::list<int> intList;
     std::ifstream inputFile(file_name);
     if (!inputFile.is_open()) {
-        std::cerr << "Error opening file: " << file_name << std::endl;
-        return std::list<int>();
+        std::cerr << "Error opening file: " << file_name << "\n";
+        return intList;
     }
 
     std::string line;
@@ -17,13 +16,12 @@ std::list<int> file_to_list(const std::string& file_name) {
             intList.push_back(std::stoi(line));
         }
     }
-
     return intList;
 }
 
 void print_list(const std::list<int>& lst) {
-    for (const int& v : lst) {
-        std::cout << v << " ";
+    for (std::list<int>::const_iterator it = lst.begin(); it != lst.end(); ++it) {
+        std::cout << *it << " ";
     }
     std::cout << "\n";
 }
