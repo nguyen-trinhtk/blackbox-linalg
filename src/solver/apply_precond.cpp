@@ -5,6 +5,7 @@
 #include <string>
 #include <list>
 #include "../utils/utils.h"
+#include "../utils/sms_mult.h"
 
 
 void apply_preconditioner(int n, int q, std::string mat_dir, std::string precond_dir, std::string dest_dir) {
@@ -12,14 +13,7 @@ void apply_preconditioner(int n, int q, std::string mat_dir, std::string precond
     std::string mat_file = mat_dir + "/" + file_name;
     std::string precond_file = precond_dir + "/" + file_name;
     std::string dest_file = dest_dir + "/" + file_name;
-    std::ofstream outputFile(dest_file);
-    if (outputFile.is_open()) {
-        outputFile << "Successfully created";
-        // multiplication logic here, write to output file in .sms format
-        outputFile.close();
-    } else {
-        std::cerr << "Error: Unable to open or create matrix file." << "\n";
-    }
+    diagonal_scaling(n, q, mat_file, precond_file, dest_file);
 }
 
 int main(int argc, char *argv[]) {

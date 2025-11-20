@@ -9,21 +9,21 @@
 int random_field_element(int q) {
     static std::random_device rd;
     static std::mt19937 gen(rd());
-    std::uniform_int_distribution<> distrib(0, q);
+    std::uniform_int_distribution<> distrib(0, q - 1);
     return distrib(gen);
 }
 
 void random_dense(int n, int q, std::string dest_file) {
     std::ofstream outputFile(dest_file);
     if (outputFile.is_open()) {
-        std::string matrix_string = std::to_string(n) + " " + std::to_string(n) + "\n";
+        outputFile << std::to_string(n) + " " + std::to_string(n) << "\n";
         for (int r=0; r < n; r++) {
             for (int c=0; c < n; c++) {
-                matrix_string += std::to_string(random_field_element(q)) + " ";
+                outputFile << std::to_string(random_field_element(q));
+                if (c + 1 < n) outputFile << " ";
             }
-            matrix_string += "\n";
+            outputFile << "\n";
         }
-        outputFile << matrix_string;
         outputFile.close();
     } else {
         std::cerr << "Error: Unable to open or create matrix file." << "\n";
@@ -104,6 +104,5 @@ int main(int argc, char* argv[]) {
             generate_matrix(matrix_type, *n_it, *q_it, dest_dir);
         }
     }
-    std::cout << dest_dir << "\n";
     return 0;
 }

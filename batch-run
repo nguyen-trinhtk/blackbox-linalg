@@ -78,6 +78,8 @@ print_check() {
 
 parse_args "$@"
 generate_var_list
+RESULT_FILE="$RUN_DIR/results.csv"
+touch "$RESULT_FILE"
 # print_check
 make
 for (( TRIAL=1; TRIAL < ( ATTEMPTS + 1 ); TRIAL++ )); do
@@ -88,4 +90,10 @@ for (( TRIAL=1; TRIAL < ( ATTEMPTS + 1 ); TRIAL++ )); do
     ./build/solver/generate_matrix "$MAT_TYPE" "$N_FILE" "$Q_FILE" "$RUN_DIR/trial-$TRIAL/matrix"
     ./build/solver/generate_matrix "$PRECOND_TYPE" "$N_FILE" "$Q_FILE" "$RUN_DIR/trial-$TRIAL/precond"
     ./build/solver/apply_precond "$N_FILE" "$Q_FILE" "$RUN_DIR/trial-$TRIAL/matrix" "$RUN_DIR/trial-$TRIAL/precond" "$RUN_DIR/trial-$TRIAL/fin"
+    python3 src/utils/convert.py "$RUN_DIR/trial-$TRIAL"
+    for SMS_FILE in "$RUN_DIR/trial-$TRIAL/fin"/*.sms; do
+        echo "$(basename "$SMS_FILE")"
+        # ./build/solver/run_wiedemann $SMS_FILE
+    done
 done
+

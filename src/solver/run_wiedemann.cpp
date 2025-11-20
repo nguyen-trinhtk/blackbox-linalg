@@ -10,17 +10,6 @@
 using namespace LinBox;
 using namespace std;
 
-// Print a polynomial
-template <class Field, class Polynomial>
-void printPolynomial(std::ostream& out, const Field &F, const Polynomial &v)
-{
-    for (int i = (int)v.size(); i-- ; ) {
-        F.write(out, v[(size_t)i]);
-        if (i > 0) out << " x^" << i << " + ";
-    }
-    out << endl;
-}
-
 int main(int argc, char **argv)
 {
     if (argc != 2) {
@@ -35,8 +24,6 @@ int main(int argc, char **argv)
         return -1;
     }
 
-    // matrix file name: nxn-GFq.sms
-    // q = strip that q from the file name? use regex
     std::regex re("GF(\\d+)");
     std::smatch match;
     long q = 0;
