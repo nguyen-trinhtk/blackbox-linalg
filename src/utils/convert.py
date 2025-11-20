@@ -41,3 +41,10 @@ if __name__ == "__main__":
                 if file.endswith('.txt'):
                     mat_file = os.path.join(fin_dir, file)
                     dense_to_sms(mat_file)
+                    
+        if 'matrix' in dirs:
+            matrix_dir = os.path.join(root, 'matrix')
+            for file in os.listdir(matrix_dir):
+                if file.endswith('.txt'):
+                    mat_file = os.path.join(matrix_dir, file)
+                    dense_to_sms(mat_file)

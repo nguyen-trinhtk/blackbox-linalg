@@ -76,13 +76,51 @@ print_check() {
     echo "${N_LIST[@]}"
 }
 
+solve_original() {
+    for SMS_FILE in "$RUN_DIR/trial-$TRIAL/matrix"/*.sms; do
+        FILE=$(basename "$SMS_FILE")
+        if [[ "$FILE" =~ ^([0-9]+)x[0-9]+-GF([0-9]+)\.sms$ ]]; then
+            N="${BASH_REMATCH[1]}"
+            Q="${BASH_REMATCH[2]}"
+        else
+            echo "Filename format unrecognized: $FILE" >&2
+            continue
+        fi
+
+        ./build/solver/run_wiedemann "$SMS_FILE"
+        RESULT=$?
+
+        echo "$TRIAL,$N,$Q,$RESULT,0" >> "$RES_FILE"
+    done
+}
+
+solve_precond() {
+    for SMS_FILE in "$RUN_DIR/trial-$TRIAL/fin"/*.sms; do
+        FILE=$(basename "$SMS_FILE")
+        if [[ "$FILE" =~ ^([0-9]+)x[0-9]+-GF([0-9]+)\.sms$ ]]; then
+            N="${BASH_REMATCH[1]}"
+            Q="${BASH_REMATCH[2]}"
+        else
+            echo "Filename format unrecognized: $FILE" >&2
+            continue
+        fi
+
+        ./build/solver/run_wiedemann "$SMS_FILE"
+        RESULT=$?
+
+        echo "$TRIAL,$N,$Q,$RESULT,1" >> "$RES_FILE"
+    done
+}
+
 parse_args "$@"
 generate_var_list
-RESULT_FILE="$RUN_DIR/results.csv"
-touch "$RESULT_FILE"
+RES_FILE="$RUN_DIR/results.csv"
+touch "$RES_FILE"
+echo "trial,n,q,success,precond?" >> "$RES_FILE"
 # print_check
 make
 for (( TRIAL=1; TRIAL < ( ATTEMPTS + 1 ); TRIAL++ )); do
+    echo "Trial $TRIAL:"
     mkdir -p "$RUN_DIR/trial-$TRIAL"
     mkdir -p "$RUN_DIR/trial-$TRIAL/matrix"
     mkdir -p "$RUN_DIR/trial-$TRIAL/precond"
@@ -91,9 +129,9 @@ for (( TRIAL=1; TRIAL < ( ATTEMPTS + 1 ); TRIAL++ )); do
     ./build/solver/generate_matrix "$PRECOND_TYPE" "$N_FILE" "$Q_FILE" "$RUN_DIR/trial-$TRIAL/precond"
     ./build/solver/apply_precond "$N_FILE" "$Q_FILE" "$RUN_DIR/trial-$TRIAL/matrix" "$RUN_DIR/trial-$TRIAL/precond" "$RUN_DIR/trial-$TRIAL/fin"
     python3 src/utils/convert.py "$RUN_DIR/trial-$TRIAL"
-    for SMS_FILE in "$RUN_DIR/trial-$TRIAL/fin"/*.sms; do
-        echo "$(basename "$SMS_FILE")"
-        # ./build/solver/run_wiedemann $SMS_FILE
-    done
+    echo "ORIGINALLLLLLLL"
+    solve_original
+    echo "PRECONDDDDDDDDD"
+    solve_precond
 done
 
