@@ -134,4 +134,4 @@ for (( TRIAL=1; TRIAL < ( ATTEMPTS + 1 ); TRIAL++ )); do
     echo "PRECOND"
     solve_precond
 done
-
+python3 ./src/analyzer/process_csv.py "$RUN_DIR/results.csv"
