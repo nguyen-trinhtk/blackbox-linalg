@@ -59,7 +59,7 @@ int main(int argc, char **argv) {
         success += solve(q, trial_input);
     }
 
-    std::cout << "Successes: " << success << "/" << trials << std::endl;
-    std::cout << std::endl;
+    // std::cout << "Successes: " << success << "/" << trials << std::endl;
+    // std::cout << std::endl;
     return success;
 }

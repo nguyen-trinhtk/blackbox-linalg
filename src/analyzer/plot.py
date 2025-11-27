@@ -3,6 +3,7 @@ import numpy as np
 import os
 
 class Plot:
+    #TODO: make smallest division unit = 1, range = 0.0 -> 1.1
     def __init__(self, title="", xlabel="x", ylabel="y"):
         self.__title = title
         self.__xlabel = xlabel
@@ -21,7 +22,7 @@ class Plot:
     def removeLine(self,label):
         self.__lineDict.pop(label,None)
         
-    def plotAll(self, save_path="", save_name="plot.png",save=True):
+    def plotAll(self, save_path="", save_name="plot.png",show=True,save=True):
         plt.figure()
         for label, coordinates in self.__lineDict.items():
             plt.plot(coordinates[0],coordinates[1],label=label)
@@ -32,9 +33,11 @@ class Plot:
         if save:
             filepath = save_name if not save_path else os.path.join(save_path, save_name)
             plt.savefig(filepath)
-        plt.show()
+            print(f"Plot saved to {filepath}")
+        if show:
+            plt.show()
     
-    def plotSelected(self, labels, save_path="", save_name="plot-selected.png",save=True):
+    def plotSelected(self, labels, save_path="", save_name="plot-selected.png",show=True,save=True):
         plt.figure()
         for label in labels: 
             if not label in self.__lineDict.keys():
@@ -47,5 +50,7 @@ class Plot:
         if save:
             filepath = save_name if not save_path else os.path.join(save_path, save_name)
             plt.savefig(filepath)
-        plt.show()
+            print(f"Plot saved to {filepath}")
+        if show:
+            plt.show()
     

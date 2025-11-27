@@ -90,10 +90,9 @@ solve_original() {
         ./build/solver/run_wiedemann "$SMS_FILE"
         RESULT=$?
 
-        echo "$TRIAL,$N,$Q,$RESULT,0" >> "$RES_FILE"
+        echo "$TRIAL,$N,$Q,$RESULT,0" >> "$RAW_RES_FILE"
     done
 }
-
 solve_precond() {
     for SMS_FILE in "$RUN_DIR/trial-$TRIAL/fin"/*.sms; do
         FILE=$(basename "$SMS_FILE")
@@ -108,15 +107,17 @@ solve_precond() {
         ./build/solver/run_wiedemann "$SMS_FILE"
         RESULT=$?
 
-        echo "$TRIAL,$N,$Q,$RESULT,1" >> "$RES_FILE"
+        echo "$TRIAL,$N,$Q,$RESULT,1" >> "$RAW_RES_FILE"
     done
 }
 
 parse_args "$@"
 generate_var_list
-RES_FILE="$RUN_DIR/results.csv"
-touch "$RES_FILE"
-echo "trial,n,q,success,precond?" >> "$RES_FILE"
+RAW_RES_FILE="$RUN_DIR/raw-results.csv"
+PROCESSED_RES_FILE="$RUN_DIR/processed-results.csv"
+touch "$RAW_RES_FILE"
+
+echo "trial,n,q,success,precond?" >> "$RAW_RES_FILE"
 # print_check
 make
 for (( TRIAL=1; TRIAL < ( ATTEMPTS + 1 ); TRIAL++ )); do
@@ -128,10 +129,11 @@ for (( TRIAL=1; TRIAL < ( ATTEMPTS + 1 ); TRIAL++ )); do
     ./build/solver/generate_matrix "$MAT_TYPE" "$N_FILE" "$Q_FILE" "$RUN_DIR/trial-$TRIAL/matrix"
     ./build/solver/generate_matrix "$PRECOND_TYPE" "$N_FILE" "$Q_FILE" "$RUN_DIR/trial-$TRIAL/precond"
     ./build/solver/apply_precond "$N_FILE" "$Q_FILE" "$RUN_DIR/trial-$TRIAL/matrix" "$RUN_DIR/trial-$TRIAL/precond" "$RUN_DIR/trial-$TRIAL/fin"
-    python3 src/utils/convert.py "$RUN_DIR/trial-$TRIAL"
-    echo "ORIGINAL"
+    python3 src/utils/convert_format.py "$RUN_DIR/trial-$TRIAL"
+    # echo "ORIGINAL"
     solve_original
-    echo "PRECOND"
+    # echo "PRECOND"
     solve_precond
 done
-python3 ./src/analyzer/process_csv.py "$RUN_DIR/results.csv"
+python3 ./src/utils/preprocess_csv.py "$RAW_RES_FILE" "$PROCESSED_RES_FILE"
+python3 ./src/analyzer/main.py "$PROCESSED_RES_FILE" "$IND_VAR" "$RUN_DIR"
