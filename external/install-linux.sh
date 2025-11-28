@@ -13,9 +13,32 @@ append_env() {
 echo "Starting Linux external libraries installation in $ROOT"
 
 # -------------------------
-# 1. GMP
+# 1. GMP  (robust mirror download)
 # -------------------------
-curl -LO https://gmplib.org/download/gmp/gmp-6.3.0.tar.xz
+
+echo "Downloading GMP..."
+
+download_gmp() {
+    for url in \
+        "https://ftp.gnu.org/gnu/gmp/gmp-6.3.0.tar.xz" \
+        "https://ftpmirror.gnu.org/gmp/gmp-6.3.0.tar.xz" \
+        "https://github.com/Macaulay2/M2/releases/download/distrib-files/gmp-6.3.0.tar.xz"
+    do
+        echo "Trying: $url"
+        if curl -L --retry 5 --retry-delay 5 -o gmp-6.3.0.tar.xz "$url"; then
+            echo "GMP download succeeded."
+            return 0
+        fi
+        echo "Failed: $url"
+    done
+    return 1
+}
+
+if ! download_gmp; then
+    echo "ERROR: Could not download GMP from any mirror."
+    exit 1
+fi
+
 tar -xf gmp-6.3.0.tar.xz
 rm gmp-6.3.0.tar.xz
 cd gmp-6.3.0
