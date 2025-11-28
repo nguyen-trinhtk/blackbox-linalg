@@ -1,5 +1,3 @@
-# CXX = clang++
-# CXXFLAGS = -Wall
 ROOT := $(abspath .)
 
 # Paths to external libraries

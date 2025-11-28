@@ -1,17 +1,65 @@
-name: Minimal CI
+name: CI
 
 on:
-  push: {}
-  pull_request: {}
+  push:
+    branches: [ main ]
+  pull_request:
 
 jobs:
-  pass:
-    runs-on: ubuntu-latest
+  build-and-test:
+    runs-on: ubuntu-22.04
+    env:
+      CC: clang
+      CXX: clang++
+
     steps:
-      - name: Checkout (optional)
+      - name: Check out repository
         uses: actions/checkout@v3
 
-      - name: Succeed
+      - name: Install system dependencies
         run: |
-          echo "workflow."
-          exit 0
+          echo "Installing system dependencies..."
+          if [ -n "$ACT" ]; then
+            apt-get update
+            apt-get install -y curl build-essential clang gfortran pkg-config \
+              python3 python3-pip xz-utils primesieve libgmp-dev libblas-dev liblapack-dev
+          else
+            sudo apt-get update
+            sudo apt-get install -y curl build-essential clang gfortran pkg-config \
+              python3 python3-pip xz-utils primesieve libgmp-dev libblas-dev liblapack-dev
+          fi
+
+      - name: Install Python dependencies
+        run: |
+          echo "Creating Python virtual environment..."
+          python3 -m venv .venv
+          source .venv/bin/activate
+          pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Cache external libraries
+        uses: actions/cache@v3
+        id: extlibs-cache
+        with:
+          path: external
+          key: ${{ runner.os }}-extlibs-v1
+
+      - name: Build external libraries (only if not cached)
+        if: steps.extlibs-cache.outputs.cache-hit != 'true'
+        run: |
+          chmod +x ./external/install-linux.sh
+          ./external/install-linux.sh
+
+      - name: Build your C++ tools
+        run: |
+          make -j4
+
+      - name: Run a small test version of your script
+        run: |
+          ./batch-run -v n -r 10-100 -t dense -a wiedemann -p diagonal -f 31
+
+      - name: Upload results (CSV, plots)
+        uses: actions/upload-artifact@v3
+        with:
+          name: run-results
+          path: runs/*/*
