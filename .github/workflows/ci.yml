@@ -14,7 +14,7 @@ jobs:
 
     steps:
       - name: Check out repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Install system dependencies
         run: |
@@ -38,7 +38,7 @@ jobs:
           pip install -r requirements.txt
 
       - name: Cache external libraries
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         id: extlibs-cache
         with:
           path: external
@@ -59,7 +59,7 @@ jobs:
           ./batch-run -v n -r 10-100 -t dense -a wiedemann -p diagonal -f 31
 
       - name: Upload results (CSV, plots)
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: run-results
           path: runs/*/*
