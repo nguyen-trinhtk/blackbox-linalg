@@ -1,4 +1,0 @@
-#ifndef __FFLASFFPACK_CHARPOLY_Danilevskii_LUKrylov_THRESHOLD
-#define __FFLASFFPACK_CHARPOLY_Danilevskii_LUKrylov_THRESHOLD 34
-#endif
-

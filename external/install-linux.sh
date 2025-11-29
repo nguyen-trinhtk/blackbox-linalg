@@ -1,133 +1,115 @@
-#!/bin/bash
-set -euo pipefail
+# #!/usr/bin/env bash
+# set -e
 
-ROOT="$PWD"
+# ROOT=$(pwd)
+# EXT="$ROOT/external"
 
-# Helper function to append env vars (for CI we don't append to shell rc)
-append_env() {
-    local var_name=$1
-    local value=$2
-    export "$var_name"="$value"
-}
+# echo "=== Building external dependencies into $EXT ==="
 
-echo "Starting Linux external libraries installation in $ROOT"
+# cd external
 
-# -------------------------
-# 1. GMP  (robust mirror download)
-# -------------------------
+# # ================================================================
+# # GMP
+# # ================================================================
+# if [ ! -d gmp-6.3.0 ]; then
+#     tar xf gmp-6.3.0.tar.xz
+# fi
 
-echo "Downloading GMP..."
+# cd gmp-6.3.0
+# ./configure \
+#   --disable-shared \
+#   --enable-static \
+#   --enable-cxx \
+#   --with-pic \
+#   --prefix="$EXT/gmp-6.3.0"
 
-download_gmp() {
-    for url in \
-        "https://ftp.gnu.org/gnu/gmp/gmp-6.3.0.tar.xz" \
-        "https://ftpmirror.gnu.org/gmp/gmp-6.3.0.tar.xz" \
-        "https://github.com/Macaulay2/M2/releases/download/distrib-files/gmp-6.3.0.tar.xz"
-    do
-        echo "Trying: $url"
-        if curl -L --retry 5 --retry-delay 5 -o gmp-6.3.0.tar.xz "$url"; then
-            echo "GMP download succeeded."
-            return 0
-        fi
-        echo "Failed: $url"
-    done
-    return 1
-}
+# make -j$(nproc)
+# make install
+# cd ..
 
-if ! download_gmp; then
-    echo "ERROR: Could not download GMP from any mirror."
-    exit 1
-fi
+# # ================================================================
+# # GIVARO
+# # ================================================================
+# if [ ! -d givaro-4.2.1 ]; then
+#     tar xf givaro-4.2.1.tar.gz
+# fi
 
-tar -xf gmp-6.3.0.tar.xz
-rm gmp-6.3.0.tar.xz
-cd gmp-6.3.0
-./configure --prefix="$ROOT/gmp-6.3.0" --enable-cxx
-make -j$(nproc) && make install
-cd ..
+# cd givaro-4.2.1
 
-append_env PATH "$ROOT/gmp-6.3.0/bin:$PATH"
-append_env LD_LIBRARY_PATH "$ROOT/gmp-6.3.0/lib:${LD_LIBRARY_PATH:-}"
-append_env PKG_CONFIG_PATH "$ROOT/gmp-6.3.0/lib/pkgconfig:${PKG_CONFIG_PATH:-}"
-append_env CPPFLAGS "-I$ROOT/gmp-6.3.0/include ${CPPFLAGS:-}"
-append_env LDFLAGS "-L$ROOT/gmp-6.3.0/lib ${LDFLAGS:-}"
+# CPPFLAGS="-I$EXT/gmp-6.3.0/include" \
+# LDFLAGS="-L$EXT/gmp-6.3.0/lib" \
+# LIBS="-lgmp -lgmpxx" \
+# ./configure \
+#   --disable-shared \
+#   --enable-static \
+#   --with-pic \
+#   --with-gmp="$EXT/gmp-6.3.0" \
+#   --prefix="$EXT/givaro-4.2.1"
 
-# -------------------------
-# 2. Givaro
-# -------------------------
-curl -LO https://github.com/linbox-team/givaro/releases/download/v4.2.1/givaro-4.2.1.tar.gz
-tar -xzf givaro-4.2.1.tar.gz
-rm givaro-4.2.1.tar.gz
-cd givaro-4.2.1
-./configure --prefix="$ROOT/givaro-4.2.1" --with-gmp-prefix="$ROOT/gmp-6.3.0"
-make -j$(nproc) && make install
-cd ..
+# make -j$(nproc)
+# make install
+# cd ..
 
-append_env PATH "$ROOT/givaro-4.2.1/bin:$PATH"
-append_env LD_LIBRARY_PATH "$ROOT/givaro-4.2.1/lib:$LD_LIBRARY_PATH"
-append_env PKG_CONFIG_PATH "$ROOT/givaro-4.2.1/lib/pkgconfig:$PKG_CONFIG_PATH"
-append_env CPPFLAGS "${CPPFLAGS:-} -I$ROOT/givaro-4.2.1/include"
-append_env LDFLAGS "${LDFLAGS:-} -L$ROOT/givaro-4.2.1/lib"
+# # ================================================================
+# # OPENBLAS
+# # ================================================================
+# if [ ! -d OpenBLAS-0.3.30 ]; then
+#     tar xf OpenBLAS-0.3.30.tar.gz
+# fi
 
-# -------------------------
-# 3. OpenBLAS
-# -------------------------
-curl -L -o OpenBLAS-0.3.30.tar.gz \
-  https://github.com/xianyi/OpenBLAS/archive/refs/tags/v0.3.30.tar.gz
+# cd OpenBLAS-0.3.30
+# make -j$(nproc) NO_SHARED=1
+# make PREFIX="$EXT/OpenBLAS-0.3.30" install
+# cd ..
 
-tar -xzf OpenBLAS-0.3.30.tar.gz
-rm OpenBLAS-0.3.30.tar.gz
-cd OpenBLAS-0.3.30
-make -j$(nproc)
-make PREFIX="$ROOT/OpenBLAS-0.3.30" install
-cd ..
+# # ================================================================
+# # FFLAS-FFPACK
+# # ================================================================
+# if [ ! -d fflas-ffpack-2.5.0 ]; then
+#     tar xf fflas-ffpack-2.5.0.tar.gz
+# fi
 
-append_env PATH "$ROOT/OpenBLAS-0.3.30/bin:$PATH"
-append_env LD_LIBRARY_PATH "$ROOT/OpenBLAS-0.3.30/lib:$LD_LIBRARY_PATH"
-append_env PKG_CONFIG_PATH "$ROOT/OpenBLAS-0.3.30/lib/pkgconfig:$PKG_CONFIG_PATH"
-append_env CPPFLAGS "${CPPFLAGS:-} -I$ROOT/OpenBLAS-0.3.30/include"
-append_env LDFLAGS "${LDFLAGS:-} -L$ROOT/OpenBLAS-0.3.30/lib"
+# cd fflas-ffpack-2.5.0
 
-# -------------------------
-# 4. FFLAS-FFPACK
-# -------------------------
-curl -LO https://github.com/linbox-team/fflas-ffpack/releases/download/v2.5.0/fflas-ffpack-2.5.0.tar.gz
-tar -xzf fflas-ffpack-2.5.0.tar.gz
-rm fflas-ffpack-2.5.0.tar.gz
-cd fflas-ffpack-2.5.0
-./configure --prefix="$ROOT/fflas-ffpack-2.5.0" \
-    --with-blas-libs="-L$ROOT/OpenBLAS-0.3.30/lib -lopenblas" \
-    --with-blas-cflags="-I$ROOT/OpenBLAS-0.3.30/include"
-make -j$(nproc) && make autotune && make install
-cd ..
+# CPPFLAGS="-I$EXT/gmp-6.3.0/include -I$EXT/givaro-4.2.1/include" \
+# LDFLAGS="-L$EXT/gmp-6.3.0/lib -L$EXT/givaro-4.2.1/lib -L$EXT/OpenBLAS-0.3.30/lib" \
+# LIBS="-lgmp -lgmpxx -lgivaro -lopenblas" \
+# ./configure \
+#   --disable-shared \
+#   --enable-static \
+#   --with-pic \
+#   --with-blas="$EXT/OpenBLAS-0.3.30" \
+#   --with-givaro="$EXT/givaro-4.2.1" \
+#   --with-gmp="$EXT/gmp-6.3.0" \
+#   --prefix="$EXT/fflas-ffpack-2.5.0"
 
-append_env PATH "$ROOT/fflas-ffpack-2.5.0/bin:$PATH"
-append_env LD_LIBRARY_PATH "$ROOT/fflas-ffpack-2.5.0/lib:$LD_LIBRARY_PATH"
-append_env PKG_CONFIG_PATH "$ROOT/fflas-ffpack-2.5.0/lib/pkgconfig:$PKG_CONFIG_PATH"
-append_env CPPFLAGS "${CPPFLAGS:-} -I$ROOT/fflas-ffpack-2.5.0/include"
-append_env LDFLAGS "${LDFLAGS:-} -L$ROOT/fflas-ffpack-2.5.0/lib"
+# make -j$(nproc)
+# make install
+# cd ..
 
-# -------------------------
-# 5. LinBox
-# -------------------------
-curl -LO https://github.com/linbox-team/linbox/releases/download/v1.7.1/linbox-1.7.1.tar.gz
-tar -xzf linbox-1.7.1.tar.gz
-rm linbox-1.7.1.tar.gz
-cd linbox-1.7.1
-./configure --prefix="$ROOT/linbox-1.7.1" \
-    --with-givaro="$ROOT/givaro-4.2.1" \
-    --with-fflas-ffpack="$ROOT/fflas-ffpack-2.5.0" \
-    --with-blas-libs="-L$ROOT/OpenBLAS-0.3.30/lib -lopenblas" \
-    --with-blas-cflags="-I$ROOT/OpenBLAS-0.3.30/include"
-make -j$(nproc) && make check && make install
-cd ..
+# # ================================================================
+# # LINBOX
+# # ================================================================
+# if [ ! -d linbox-1.7.1 ]; then
+#     tar xf linbox-1.7.1.tar.gz
+# fi
 
-append_env PATH "$ROOT/linbox-1.7.1/bin:$PATH"
-append_env LD_LIBRARY_PATH "$ROOT/linbox-1.7.1/lib:$LD_LIBRARY_PATH"
-append_env PKG_CONFIG_PATH "$ROOT/linbox-1.7.1/lib/pkgconfig:$PKG_CONFIG_PATH"
-append_env CPPFLAGS "${CPPFLAGS:-} -I$ROOT/linbox-1.7.1/include"
-append_env LDFLAGS "${LDFLAGS:-} -L$ROOT/linbox-1.7.1/lib"
+# cd linbox-1.7.1
 
-echo "Linux external libraries installation complete."
-echo "LD_LIBRARY_PATH=$LD_LIBRARY_PATH"
-echo "PKG_CONFIG_PATH=$PKG_CONFIG_PATH"
+# CPPFLAGS="-I$EXT/gmp-6.3.0/include -I$EXT/givaro-4.2.1/include -I$EXT/fflas-ffpack-2.5.0/include" \
+# LDFLAGS="-L$EXT/gmp-6.3.0/lib -L$EXT/givaro-4.2.1/lib -L$EXT/fflas-ffpack-2.5.0/lib -L$EXT/OpenBLAS-0.3.30/lib" \
+# LIBS="-lgmp -lgmpxx -lgivaro -lfflas -lopenblas" \
+# ./configure \
+#   --disable-shared \
+#   --enable-static \
+#   --with-pic \
+#   --with-givaro="$EXT/givaro-4.2.1" \
+#   --with-gmp="$EXT/gmp-6.3.0" \
+#   --with-fflas-ffpack="$EXT/fflas-ffpack-2.5.0" \
+#   --prefix="$EXT/linbox-1.7.1"
+
+# make -j$(nproc)
+# make install
+# cd ..
+
+# echo "=== All external libraries built successfully ==="
