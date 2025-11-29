@@ -1,5 +1,3 @@
 .obsidian
 notebooks/.ipynb_checkpoints/*
-run/*
-solve
-batch-run
+runs/*

@@ -1,57 +1,43 @@
-# ===== Fixed Makefile for gen_precond and solve =====
-
+# CXX = clang++
+# CXXFLAGS = -Wall
 ROOT := $(abspath .)
 
 # Paths to external libraries
-GMP_DIR      := $(ROOT)/external/gmp-6.3.0
-OPENBLAS_DIR := $(ROOT)/external/OpenBLAS-0.3.30
-LINBOX_DIR   := $(ROOT)/external/linbox-1.7.1
+GMP_DIR          := $(ROOT)/external/gmp-6.3.0
+GIVARO_DIR       := $(ROOT)/external/givaro-4.2.1
+OPENBLAS_DIR     := $(ROOT)/external/OpenBLAS-0.3.30
+FFLAS_FFPACK_DIR := $(ROOT)/external/fflas-ffpack-2.5.0
+LINBOX_DIR       := $(ROOT)/external/linbox-1.7.1
 
-# PKG_CONFIG search path
-PKG_CONFIG_PATH := $(LINBOX_DIR)/lib/pkgconfig:$(GMP_DIR)/lib/pkgconfig:$(OPENBLAS_DIR)/lib/pkgconfig
-export PKG_CONFIG_PATH
+PKG_CONFIG_PATH := $(LINBOX_DIR)/lib/pkgconfig:$(FFLAS_FFPACK_DIR)/lib/pkgconfig:$(GIVARO_DIR)/lib/pkgconfig:$(OPENBLAS_DIR)/lib/pkgconfig
 
 CXX := clang++
-CXXFLAGS := -std=c++17 -stdlib=libc++ -O3 -w -DDISABLE_COMMENTATOR \
-            -I$(GMP_DIR)/include \
-            -I$(GMP_DIR)/include/gmp \
-            -I$(ROOT)/core
+CXXFLAGS := -std=c++17 -O3 -w -I$(GMP_DIR)/include
+PKGFLAGS := $(shell PKG_CONFIG_PATH=$(PKG_CONFIG_PATH) pkg-config --cflags --libs linbox 2>/dev/null)
+LDFLAGS := -L$(GMP_DIR)/lib -lgmp -lgmpxx
 
-LDFLAGS  := -L$(GMP_DIR)/lib -lgmp -lgmpxx -L$(OPENBLAS_DIR)/lib -lopenblas -stdlib=libc++
+GEN_SRC = src/solver/generate_matrix.cpp src/utils/utils.cpp
+GEN_TARGET = build/solver/generate_matrix
 
-PKGFLAGS := $(shell pkg-config --cflags --libs linbox 2>/dev/null)
+PRECOND_SRC = src/solver/apply_precond.cpp src/utils/utils.cpp src/utils/sms_mult.cpp
+PRECOND_TARGET = build/solver/apply_precond
 
-TARGETS := gen_precond run_solve
+SOLVE_SRC = src/solver/run_wiedemann.cpp
+SOLVE_TARGET = build/solver/run_wiedemann
 
-.PHONY: all clean
+all: $(GEN_TARGET) $(PRECOND_TARGET) $(SOLVE_TARGET)
 
-all: $(TARGETS)
+$(GEN_TARGET): $(GEN_SRC)
+	mkdir -p $(dir $@)
+	$(CXX) $(CXXFLAGS) $(GEN_SRC) -o $@ $(PKGFLAGS) $(LDFLAGS)
 
-# ===== Build gen_precond =====
-GEN_PRECOND_SRCS := ./src/solver/gen_precond.cpp ./src/solver/core/matrix_gen.cpp ./src/solver/core/preconditioner.cpp
+$(PRECOND_TARGET): $(PRECOND_SRC)
+	mkdir -p $(dir $@)
+	$(CXX) $(CXXFLAGS) $(PRECOND_SRC) -o $@ $(PKGFLAGS) $(LDFLAGS)
 
-gen_precond: $(GEN_PRECOND_SRCS)
-	@if [ -z "$(PKGFLAGS)" ]; then \
-	    echo "Error: pkg-config could not find linbox.pc"; \
-	    echo "Export PKG_CONFIG_PATH and try again:"; \
-	    exit 1; \
-	fi
-	@echo "Building gen_precond..."
-	$(CXX) $(CXXFLAGS) $(GEN_PRECOND_SRCS) -o $@ $(PKGFLAGS) $(LDFLAGS) -std=c++17 -stdlib=libc++
-
-# ===== Build solve =====
-RUN_SOLVE_SRCS := ./src/solver/run_solve.cpp \
-              ./src/solver/algorithms/wiedemann.cpp \
-              ./src/solver/algorithms/lcm_wiedemann.cpp
-
-run_solve: $(RUN_SOLVE_SRCS)
-	@if [ -z "$(PKGFLAGS)" ]; then \
-	    echo "Error: pkg-config could not find linbox.pc"; \
-	    echo "Export PKG_CONFIG_PATH and try again:"; \
-	    exit 1; \
-	fi
-	@echo "Building run_solve..."
-	$(CXX) $(CXXFLAGS) $(RUN_SOLVE_SRCS) -o $@ $(PKGFLAGS) $(LDFLAGS) -std=c++17 -stdlib=libc++
+$(SOLVE_TARGET): $(SOLVE_SRC)
+	mkdir -p $(dir $@)
+	$(CXX) $(CXXFLAGS) $(SOLVE_SRC) -o $@ $(PKGFLAGS) $(LDFLAGS)
 
 clean:
-	rm -f $(TARGETS)
+	rm -rf build

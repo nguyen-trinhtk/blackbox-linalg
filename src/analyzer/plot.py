@@ -1,77 +1,56 @@
-import pandas as pd
 import matplotlib.pyplot as plt
+import numpy as np
 import os
 
-def plot_csv_xy(path_to_csv, x, y, label="Plot"):
-    """
-    Plot y vs x from a single CSV file and save the figure to the CSV's parent directory.
+class Plot:
+    #TODO: make smallest division unit = 1, range = 0.0 -> 1.1
+    def __init__(self, title="", xlabel="x", ylabel="y"):
+        self.__title = title
+        self.__xlabel = xlabel
+        self.__ylabel = ylabel
+        self.__lineDict = {}
+    
+    def setTitle(self,entry):
+        self.__title = entry
+        
+    def getTitle(self):
+        return self.__title
 
-    Args:
-        path_to_csv (str): Path to the CSV file.
-        x (str): Column name for x-axis.
-        y (str): Column name for y-axis.
-    """
-    if not os.path.exists(path_to_csv):
-        raise FileNotFoundError(f"CSV file not found: {path_to_csv}")
-
-    # Read CSV
-    try:
-        df = pd.read_csv(path_to_csv)
-    except Exception as e:
-        raise ValueError(f"Error reading CSV '{path_to_csv}': {e}")
-
-    # Validate columns
-    if x not in df.columns:
-        raise KeyError(f"Column '{x}' not found in {path_to_csv}. Available: {list(df.columns)}")
-    if y not in df.columns:
-        raise KeyError(f"Column '{y}' not found in {path_to_csv}. Available: {list(df.columns)}")
-
-    # Plot
-    plt.figure(figsize=(8, 6))
-    plt.plot(df[x], df[y], marker='o', label=label)
-    plt.xlabel(x)
-    plt.ylabel(y)
-    plt.title(f"{y} vs {x}")
-    plt.ylim(0, 1.1)  # <-- fixed y-axis range
-    plt.legend()
-    plt.grid(True)
-    plt.tight_layout()
-
-    # Save figure
-    parent_dir = os.path.dirname(os.path.abspath(path_to_csv))
-    save_path = os.path.join(parent_dir, f"{os.path.splitext(os.path.basename(path_to_csv))[0]}_{y}_vs_{x}.png")
-    plt.savefig(save_path)
-    print(f"Figure saved to: {save_path}")
-
-    # Show plot
-    plt.show()
-
-
-if __name__ == "__main__":
-    import sys, traceback
-
-    def usage():
-        print("Usage: plot.py <path_to_csv> <x_column> <y_column> [label]")
-
-    try:
-        if len(sys.argv) < 4:
-            usage()
-            sys.exit(1)
-
-        path = sys.argv[1]
-        xcol = sys.argv[2]
-        ycol = sys.argv[3]
-        lab = sys.argv[4] if len(sys.argv) > 4 else "Plot"
-
-        # Try to use a non-interactive backend when running headless
-        try:
-            import matplotlib
-            if os.environ.get('DISPLAY','') == '':
-                matplotlib.use('Agg')
-        except Exception:
-            pass
-
-        plot_csv_xy(path, xcol, ycol, lab)
-    except Exception:
-        traceback.print_exc()
-        sys.exit(2)
+    def addLine(self, label, abscissas, ordinates):
+        self.__lineDict.update({label:(np.array(abscissas), np.array(ordinates))})
+        
+    def removeLine(self,label):
+        self.__lineDict.pop(label,None)
+        
+    def plotAll(self, save_path="", save_name="plot.png",show=True,save=True):
+        plt.figure()
+        for label, coordinates in self.__lineDict.items():
+            plt.plot(coordinates[0],coordinates[1],label=label)
+        plt.xlabel(self.__xlabel)
+        plt.ylabel(self.__ylabel)
+        plt.title(self.__title)
+        plt.legend()
+        if save:
+            filepath = save_name if not save_path else os.path.join(save_path, save_name)
+            plt.savefig(filepath)
+            print(f"Plot saved to {filepath}")
+        if show:
+            plt.show()
+    
+    def plotSelected(self, labels, save_path="", save_name="plot-selected.png",show=True,save=True):
+        plt.figure()
+        for label in labels: 
+            if not label in self.__lineDict.keys():
+                continue
+            plt.plot(self.__lineDict[label][0],self.__lineDict[label][1],label=label)
+        plt.xlabel(self.__xlabel)
+        plt.ylabel(self.__ylabel)
+        plt.title(self.__title)
+        plt.legend()
+        if save:
+            filepath = save_name if not save_path else os.path.join(save_path, save_name)
+            plt.savefig(filepath)
+            print(f"Plot saved to {filepath}")
+        if show:
+            plt.show()
+    
