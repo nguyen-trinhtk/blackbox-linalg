@@ -1,5 +1,5 @@
 # Large Linear System Solver with Black-box Linear Algebra
-## Branch: CI / Docker Integration: 
+### CI / Docker Integration
 
 **Status:** In Progress
 
