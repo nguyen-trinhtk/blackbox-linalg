@@ -1,6 +1,6 @@
 ROOT := $(abspath .)
 
-# External library directories
+# Library prefixes
 GMP_DIR          := $(ROOT)/external/gmp-6.3.0
 GIVARO_DIR       := $(ROOT)/external/givaro-4.2.1
 OPENBLAS_DIR     := $(ROOT)/external/OpenBLAS-0.3.30
@@ -15,13 +15,17 @@ CXXFLAGS := -std=c++17 -O3 -w \
     -I$(FFLAS_FFPACK_DIR)/include \
     -I$(LINBOX_DIR)/include
 
-# Static/dynamic linking of all required libraries
+# Use pkg-config only for LinBox headers if available
+PKGFLAGS := $(shell PKG_CONFIG_PATH="$(LINBOX_DIR)/lib/pkgconfig" pkg-config --cflags --libs linbox 2>/dev/null)
+
+# Statically link all libraries
 LDFLAGS := \
-    -L$(GMP_DIR)/lib -lgmp -lgmpxx \
-    -L$(GIVARO_DIR)/lib -lgivaro \
-    -L$(OPENBLAS_DIR)/lib -lopenblas \
-    -L$(FFLAS_FFPACK_DIR)/lib -lfflas \
-    -L$(LINBOX_DIR)/lib -llinbox
+    $(GMP_DIR)/lib/libgmp.a \
+    $(GMP_DIR)/lib/libgmpxx.a \
+    $(GIVARO_DIR)/lib/libgivaro.a \
+    $(OPENBLAS_DIR)/lib/libopenblas.a \
+    $(FFLAS_FFPACK_DIR)/lib/libfflas.a \
+    $(LINBOX_DIR)/lib/liblinbox.a
 
 # Build targets
 GEN_SRC    = src/solver/generate_matrix.cpp src/utils/utils.cpp
@@ -37,15 +41,15 @@ all: $(GEN_TARGET) $(PRECOND_TARGET) $(SOLVE_TARGET)
 
 $(GEN_TARGET): $(GEN_SRC)
 	mkdir -p $(dir $@)
-	$(CXX) $(CXXFLAGS) $(GEN_SRC) -o $@ $(LDFLAGS)
+	$(CXX) $(CXXFLAGS) $(GEN_SRC) -o $@ $(PKGFLAGS) $(LDFLAGS)
 
 $(PRECOND_TARGET): $(PRECOND_SRC)
 	mkdir -p $(dir $@)
-	$(CXX) $(CXXFLAGS) $(PRECOND_SRC) -o $@ $(LDFLAGS)
+	$(CXX) $(CXXFLAGS) $(PRECOND_SRC) -o $@ $(PKGFLAGS) $(LDFLAGS)
 
 $(SOLVE_TARGET): $(SOLVE_SRC)
 	mkdir -p $(dir $@)
-	$(CXX) $(CXXFLAGS) $(SOLVE_SRC) -o $@ $(LDFLAGS)
+	$(CXX) $(CXXFLAGS) $(SOLVE_SRC) -o $@ $(PKGFLAGS) $(LDFLAGS)
 
 clean:
 	rm -rf build
