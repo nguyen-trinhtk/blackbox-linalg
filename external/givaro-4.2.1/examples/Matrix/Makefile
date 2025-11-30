@@ -196,7 +196,7 @@ CC = gcc
 CCDEPMODE = depmode=gcc3
 CCNAM = clang
 CFLAGS = -g -O2
-CPPFLAGS = -I/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/gmp-6.3.0/include 
+CPPFLAGS = -I/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/gmp-6.3.0/include -I/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/gmp-6.3.0/include  -I/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/include -I/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/OpenBLAS-0.3.30/include -I/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/fflas-ffpack-2.5.0/include -I/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/linbox-1.7.1/include
 CSCOPE = cscope
 CTAGS = ctags
 CXX = g++ -std=gnu++11
@@ -231,7 +231,7 @@ INSTALL_PROGRAM = ${INSTALL}
 INSTALL_SCRIPT = ${INSTALL}
 INSTALL_STRIP_PROGRAM = $(install_sh) -c -s
 LD = /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld
-LDFLAGS = -L/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/gmp-6.3.0/lib 
+LDFLAGS = -L/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/gmp-6.3.0/lib -L/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/gmp-6.3.0/lib  -L/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/lib -L/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/OpenBLAS-0.3.30/lib -L/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/fflas-ffpack-2.5.0/lib -L/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/linbox-1.7.1/lib
 LIBOBJS = 
 LIBS = 
 LIBTOOL = $(SHELL) $(top_builddir)/libtool

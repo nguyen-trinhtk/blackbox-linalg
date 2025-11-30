@@ -17,7 +17,7 @@ old_library='libgivaro.a'
 inherited_linker_flags=' '
 
 # Libraries that this one depends upon.
-dependency_libs=' -L/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/gmp-6.3.0/lib /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/gmp-6.3.0/lib/libgmpxx.la /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/gmp-6.3.0/lib/libgmp.la'
+dependency_libs=' -L/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/gmp-6.3.0/lib -L/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/givaro-4.2.1/lib -L/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/OpenBLAS-0.3.30/lib -L/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/fflas-ffpack-2.5.0/lib -L/Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/linbox-1.7.1/lib /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/gmp-6.3.0/lib/libgmpxx.la /Users/nguyentrinh/Documents/GitHub/wiedemann-analyzer/external/gmp-6.3.0/lib/libgmp.la'
 
 # Names of additional weak libraries provided by this library
 weak_library_names=''

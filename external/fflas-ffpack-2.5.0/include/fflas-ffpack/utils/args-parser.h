@@ -72,7 +72,7 @@ namespace FFLAS {
     void parseArguments (int argc, char **argv, Argument *args, bool printDefaults = true);
 }
 
-inline void printHelpMessage (const char *program, Argument *args, bool printDefaults = false)
+void printHelpMessage (const char *program, Argument *args, bool printDefaults = false)
 {
     int i, l;
 
@@ -153,7 +153,7 @@ inline void printHelpMessage (const char *program, Argument *args, bool printDef
 
 /* Find an argument in the argument list for a character */
 
-inline Argument *findArgument (Argument *args, char c)
+Argument *findArgument (Argument *args, char c)
 {
     int i;
 
@@ -174,7 +174,7 @@ inline Argument *findArgument (Argument *args, char c)
  *  @param instring list to be converted
  *  @return status message.
  */
-inline int getListArgs(std::list<int> & outlist, std::string & instring)
+int getListArgs(std::list<int> & outlist, std::string & instring)
 {
     int start = 0 ;
     int count = 0 ;
@@ -231,7 +231,7 @@ namespace FFLAS {
      * @param i    argument index
      * @return char* argument value
      */
-    inline char* getArgumentValue(int argc, char **argv,int i){
+    char* getArgumentValue(int argc, char **argv,int i){
         if (i+1 < argc) {
             return argv[i+1];
         } else {
@@ -240,7 +240,7 @@ namespace FFLAS {
         }
     }
 
-    inline void parseArguments (int argc, char **argv, Argument *args, bool printDefaults)
+    void parseArguments (int argc, char **argv, Argument *args, bool printDefaults)
     {
         int i;
         Argument *current;
@@ -345,7 +345,7 @@ namespace FFLAS {
     }
 
     /** writes the values of all arguments, preceded by the programName */
-    inline std::ostream& writeCommandString (std::ostream& os, Argument *args, const char* programName = nullptr)
+    std::ostream& writeCommandString (std::ostream& os, Argument *args, const char* programName = nullptr)
     {
         if (programName != nullptr)
             os << programName;

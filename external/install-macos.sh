@@ -61,7 +61,9 @@ curl -LO https://github.com/OpenMathLib/OpenBLAS/releases/download/v0.3.30/OpenB
 tar -xvzf OpenBLAS-0.3.30.tar.gz
 rm OpenBLAS-0.3.30.tar.gz
 cd OpenBLAS-0.3.30
-make && make PREFIX="$ROOT/OpenBLAS-0.3.30" install
+make clean
+make TARGET=ARMV8
+make PREFIX="$ROOT/OpenBLAS-0.3.30" install
 cd ..
 
 # Export OpenBLAS env
