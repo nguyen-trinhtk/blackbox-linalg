@@ -72,6 +72,8 @@
         "vector": "cpp",
         "algorithm": "cpp",
         "GaloisFields.C": "cpp",
-        "dot-product.C": "cpp"
+        "dot-product.C": "cpp",
+        "condition_variable": "cpp",
+        "rank.h": "c"
     }
 }
